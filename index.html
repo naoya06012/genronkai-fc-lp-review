@@ -451,6 +451,9 @@ body.rv-on #rvHint{display:block}
 #rvPanel .it.done .ac button.chk{background:#D8E1E6;color:#556570}
 #rvPanel .ft{padding:12px 14px;border-top:1px solid #EBF0F3;display:flex;gap:8px}
 #rvPanel .ft button{flex:1;border:0;border-radius:8px;padding:11px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;background:#EBF0F3;color:#3E4E58}
+#rvSync{padding:9px 14px;border-top:1px solid #EBF0F3;font-size:11.5px;color:#6D7E88;text-align:center;background:#F5F8FA}
+#rvSync.ok{color:#0074A8}
+#rvSync.ng{color:#C25A2B;background:#FFF3E3}
 #rvPanel .empty{text-align:center;font-size:13px;color:#6D7E88;padding:40px 10px;line-height:1.9}
 @media print{#rvBar,#rvPanel,#rvModal,#rvHint{display:none!important}}
 
@@ -1124,21 +1127,56 @@ body.show-anno #annoToggle{background:#F2974F}
   <div class="hd"><b>コメント一覧</b><button id="rvClose" type="button">閉じる</button></div>
   <div class="bd" id="rvList"></div>
   <div class="ft">
+    <button id="rvPull" type="button">最新に更新</button>
     <button id="rvExport" type="button">書き出す</button>
-    <button id="rvImport" type="button">読み込む</button>
   </div>
+  <div id="rvSync">この画面にのみ保存されています</div>
 </div>
-<input id="rvFile" type="file" accept=".json,application/json" style="display:none">
 
 <script>
 (function(){
-  var KEY='fclp-review-v1', data={v:1,items:[]}, mode=false, drag=null, editing=null;
+  /* ===== 保存先の設定 =====================================================
+     API に Google Apps Script のウェブアプリURLを入れると、コメントが
+     スプレッドシートに保存され、全員が同じものを見られるようになります。
+     空のままだと、各自のブラウザにだけ保存されます。 */
+  var API   = 'https://script.google.com/macros/s/AKfycbxLt85HqktsIV_LquMuYO7h6HxAFzcch4xz0Onx9arKrdjndzy8zBJLe2CCTPsI4qA/exec';
+  var TOKEN = 'genronkai-fc-lp-2026';
+  /* ====================================================================== */
+
+  var KEY='fclp-review-v1', data={v:1,items:[]}, mode=false, drag=null, editing=null, busy=false;
   try{ var s=localStorage.getItem(KEY); if(s) data=JSON.parse(s); }catch(e){}
   if(!data.items) data.items=[];
   var $=function(id){return document.getElementById(id)};
   var fclp=document.querySelector('.fclp');
   function secs(){ return Array.prototype.slice.call(document.querySelectorAll('.fclp > *')) }
-  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(data)); }catch(e){} render(); }
+  function cache(){ try{ localStorage.setItem(KEY, JSON.stringify(data)) }catch(e){} }
+  function status(msg,cls){ var el=$('rvSync'); if(!el) return; el.textContent=msg; el.className=cls||''; }
+
+  /* ---- サーバとのやりとり ---- */
+  function pull(){
+    if(!API){ status('この画面にのみ保存されています'); return Promise.resolve(); }
+    status('読み込んでいます…');
+    return fetch(API,{method:'GET'}).then(function(r){return r.json()}).then(function(res){
+      if(!res.ok) throw new Error(res.error||'error');
+      data.items=res.items||[]; cache(); render();
+      status('全員と共有されています','ok');
+    }).catch(function(){ status('つながりません。この画面にのみ保存されています','ng') });
+  }
+  function push(items,op){
+    cache(); render();
+    if(!API) return Promise.resolve();
+    if(busy) return Promise.resolve();
+    busy=true; status('保存しています…');
+    return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify({token:TOKEN,op:op||'upsert',items:items})})
+      .then(function(r){return r.json()}).then(function(res){
+        if(!res.ok) throw new Error(res.error||'error');
+        data.items=res.items||data.items; cache(); render();
+        status('保存しました','ok');
+      }).catch(function(){ status('保存できませんでした。書き出して大橋にお送りください','ng') })
+      .then(function(){ busy=false });
+  }
+
   function pageBox(el){ var r=el.getBoundingClientRect(); return {l:r.left+window.scrollX, t:r.top+window.scrollY, w:r.width, h:r.height}; }
   function findSec(py){
     var list=secs();
@@ -1176,11 +1214,13 @@ body.show-anno #annoToggle{background:#F2974F}
       var m=document.createElement('p'); m.className='m'; m.textContent=(it.by||'名前なし')+'　'+(it.at||'').slice(0,10); d.appendChild(m);
       var ac=document.createElement('div'); ac.className='ac';
       var b1=document.createElement('button'); b1.className='chk'; b1.textContent=it.done?'未対応に戻す':'対応済みにする';
-      b1.addEventListener('click',function(){ it.done=!it.done; save(); });
+      b1.addEventListener('click',function(){ it.done=!it.done; push([it]) });
       var b2=document.createElement('button'); b2.textContent='編集';
       b2.addEventListener('click',function(){ openModal(it) });
       var b3=document.createElement('button'); b3.textContent='削除';
-      b3.addEventListener('click',function(){ data.items=data.items.filter(function(x){return x!==it}); save(); });
+      b3.addEventListener('click',function(){
+        var gone=it; data.items=data.items.filter(function(x){return x!==gone}); push([gone],'delete');
+      });
       ac.appendChild(b1); ac.appendChild(b2); ac.appendChild(b3); d.appendChild(ac);
       box.appendChild(d);
     });
@@ -1201,15 +1241,15 @@ body.show-anno #annoToggle{background:#F2974F}
   }
   function closeModal(){ $('rvModal').classList.remove('open'); editing=null; }
   $('rvmCancel').addEventListener('click',function(){
-    if(editing && !editing.text){ data.items=data.items.filter(function(x){return x!==editing}); save(); }
+    if(editing && !editing.text){ var gone=editing; data.items=data.items.filter(function(x){return x!==gone}); cache(); render(); }
     closeModal();
   });
   $('rvmSave').addEventListener('click',function(){
     var txt=$('rvmText').value.trim(); if(!txt){ $('rvmText').focus(); return; }
     var by=$('rvmBy').value.trim();
     if(by){ try{ localStorage.setItem('fclp-review-by', by) }catch(e){} }
-    if(editing){ editing.text=txt; editing.by=by; if(!editing.at) editing.at=new Date().toISOString(); }
-    save(); closeModal();
+    if(editing){ editing.text=txt; editing.by=by; if(!editing.at) editing.at=new Date().toISOString(); push([editing]); }
+    closeModal();
   });
 
   /* ---- ドラッグで囲む ---- */
@@ -1236,7 +1276,7 @@ body.show-anno #annoToggle{background:#F2974F}
     var si=findSec(y), b=pageBox(secs()[si]);
     var it={id:'c'+Date.now()+Math.floor(Math.random()*99), sec:si,
       x:(x-b.l)/b.w, y:(y-b.t)/b.h, w:w/b.w, h:h/b.h, text:'', by:'', done:false, at:new Date().toISOString()};
-    data.items.push(it);
+    data.items.push(it); render();
     openModal(it);
   });
   document.addEventListener('click',function(e){
@@ -1255,10 +1295,9 @@ body.show-anno #annoToggle{background:#F2974F}
     this.classList.toggle('on',mode);
     this.textContent=mode?'コメントを終える':'コメントを付ける';
   });
-  $('btnList').addEventListener('click',function(){ $('rvPanel').classList.add('open') });
+  $('btnList').addEventListener('click',function(){ $('rvPanel').classList.add('open'); pull(); });
   $('rvClose').addEventListener('click',function(){ $('rvPanel').classList.remove('open') });
-
-  /* ---- 書き出し・読み込み ---- */
+  $('rvPull').addEventListener('click',function(){ pull() });
   $('rvExport').addEventListener('click',function(){
     var s=JSON.stringify(data,null,2);
     var a=document.createElement('a');
@@ -1266,26 +1305,13 @@ body.show-anno #annoToggle{background:#F2974F}
     a.download='lp-comments-'+new Date().toISOString().slice(0,10)+'.json';
     document.body.appendChild(a); a.click(); a.remove();
     if(navigator.clipboard) navigator.clipboard.writeText(s).catch(function(){});
-    this.textContent='書き出しました'; var b=this; setTimeout(function(){ b.textContent='書き出す' },2000);
-  });
-  $('rvImport').addEventListener('click',function(){ $('rvFile').click() });
-  $('rvFile').addEventListener('change',function(e){
-    var f=e.target.files[0]; if(!f) return;
-    var r=new FileReader();
-    r.onload=function(){
-      try{
-        var inc=JSON.parse(r.result); if(!inc.items) throw 0;
-        var ids={}; data.items.forEach(function(i){ ids[i.id]=i });
-        inc.items.forEach(function(i){ if(ids[i.id]){ ids[i.id].text=i.text; ids[i.id].by=i.by; } else { data.items.push(i) } });
-        save();
-        $('rvPanel').classList.add('open');
-      }catch(err){ /* 読み込めないファイル */ }
-    };
-    r.readAsText(f); e.target.value='';
+    var b=this; b.textContent='書き出しました'; setTimeout(function(){ b.textContent='書き出す' },2000);
   });
 
+  var last=0;
+  window.addEventListener('focus',function(){ var n=Date.now(); if(n-last>20000){ last=n; pull(); } });
   window.addEventListener('resize',render);
-  render();
+  render(); pull();
 })();
 </script>
 </body>
