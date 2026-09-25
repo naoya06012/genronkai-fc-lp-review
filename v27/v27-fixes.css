@@ -1,0 +1,17 @@
+/* v27：スマホのメリハリ。ボックス内は左揃えにし、見出しと本文の差（大きさ・太さ・間隔）をはっきりさせる */
+@media(max-width:600px){
+ /* 「現論会は」ボックス：ラベル→見出し→本文を左揃えで積む */
+ .fclp .none .row.b .lb{justify-content:flex-start}
+ .fclp .none .row.b .solution-title,.fclp .model-cards-v10 .solution-title{text-align:left;font-size:19px;line-height:1.55;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid rgba(0,72,107,.15)}
+ .fclp .none .row.b .tx,.fclp .model-cards-v10 .row.b .tx{text-align:left!important;font-size:15px;line-height:1.9;font-weight:400;color:var(--c-g700)}
+ .fclp .model-cards-v10 .row.b{padding:18px 18px 20px}
+ /* 4行以上になる本文は左揃えに戻す（中央揃えは短い見出し・リードだけ） */
+ .fclp :is(.give .txt>span,.repb>p,.staff .ld){text-align:left!important}
+ .fclp .give .txt>b{margin-bottom:4px}
+}
+@media(max-width:600px){
+ /* 3行以上になる注記（※）は中央揃えだと行頭が揃わず読みにくいので左揃え */
+ .fclp.fclp.fclp :is(.results-note,.cmpcap,.csnote,.model-note,.funding-note,.funding-operating-note,.pcap,.colnote,.honest,.cn-cap){text-align:left!important}
+}
+/* FAQの質問は行の長さ揃え（balance）をかけると3行に割れるので外す */
+.fclp summary,.fclp summary *{text-wrap:wrap!important}

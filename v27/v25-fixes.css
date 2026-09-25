@@ -1,0 +1,5 @@
+/* v25：フッターに企業情報・プライバシーポリシーのリンク */
+.footer-links{max-width:1120px;margin:auto;padding:16px 24px 32px;display:flex;justify-content:flex-end;gap:24px;border-top:1px solid rgba(255,255,255,.2);font-size:12px}
+.footer-links a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.footer-links a:hover{opacity:.7}
+@media(max-width:600px){.footer-links{justify-content:flex-start;padding:16px 20px 28px}}

@@ -1,0 +1,109 @@
+/* v16: centered sentences, funding through launch and operation, seasonal rollover. */
+.fclp #economics .staffing-intro{text-align:center;max-width:840px}
+.fclp #economics .staffing-intro p{line-height:2;text-wrap:balance}
+.staffing-intro br{display:initial}
+.staffing-intro .sentence{display:block;text-wrap:balance}
+.flow-lead-line{display:inline-block}
+.fclp #economics .bep-formula{display:block;text-align:center}
+.formula-main{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.fclp #economics .bep-formula .formula-payoff{display:block;font:700 22px/1.8 var(--f-jp);margin:16px 0 0;color:var(--c-blue-navy)}
+.formula-payoff span{display:inline-block}
+.fclp .emp .ev .approx-prefix{font:500 28px/1 var(--f-jp);letter-spacing:0;margin-right:8px}
+.fclp .emp .emp-note{font-size:11px;line-height:1.8;color:var(--c-g600);margin:20px 0 0}
+.fclp #cost .funding-plan{max-width:840px;margin:36px auto 0;padding:36px;background:var(--c-blue-50);border-radius:12px;text-align:center}
+.fclp #cost .funding-caption{font-size:16px;font-weight:700;color:var(--c-blue-navy);line-height:1.8;margin:0}
+.fclp #cost .funding-total{color:var(--c-blue-700);margin:12px 0;line-height:1.2;white-space:nowrap}
+.funding-total b{font:600 64px/1.3 var(--f-en)}
+.funding-total b span{font:400 32px var(--f-jp);padding:0 4px}
+.funding-total>small{font-size:18px;margin-left:6px}
+.fclp #cost .funding-context{font-size:15px;line-height:1.9;margin:0;text-wrap:balance}
+.funding-method{display:flex;align-items:center;justify-content:center;gap:40px;margin:28px 0;padding:28px 0;border-block:1px solid var(--c-blue-200)}
+.funding-method>div{min-width:0}
+.funding-method span{display:block;font-size:13px;color:var(--c-g600);margin-bottom:12px}
+.funding-method b{font:600 42px/1.2 var(--f-en);color:var(--c-blue-navy);white-space:nowrap}
+.funding-method b small{font:500 14px var(--f-jp);margin-left:4px}
+.funding-method b.funding-loan{font:700 26px/1.5 var(--f-jp)}
+.funding-method i{font:400 24px var(--f-jp);color:var(--c-blue-700)}
+.fclp #cost .funding-note,.fclp #cost .funding-footnote{font-size:12px;line-height:1.9;color:var(--c-g600);margin:0;text-align:left}
+.fclp #cost .funding-footnote{max-width:840px;margin:16px auto 0}
+.loan-support{max-width:840px;margin:32px auto 0;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:center;padding:24px 0;border-bottom:1px solid var(--c-g200)}
+.loan-result{text-align:center}
+.fclp #cost .loan-result p{font-size:14px;margin:0 0 12px;color:var(--c-blue-navy)}
+.loan-result>b{font:600 72px/1.1 var(--f-en);color:var(--c-blue-700)}
+.loan-result>b small{font:700 22px var(--f-jp);margin-left:6px}
+.fclp #cost .loan-support-title{font-size:22px;font-weight:700;line-height:1.6;color:var(--c-blue-navy);margin:0 0 12px}
+.fclp #cost .loan-support-title br{display:none}
+.fclp #cost .loan-support-title+p{font-size:15px;line-height:1.9;margin:0}
+.fclp #cost .csr.working-capital{background:var(--c-blue-50);padding:28px 24px;border-bottom:0}
+.fclp #cost .working-capital .nm{color:var(--c-blue-navy);font-weight:700}
+.fclp #cost .working-capital .am{color:var(--c-blue-700)}
+.fclp #cost .working-note{font-size:13px;line-height:1.9;padding:0 24px 24px;margin:0;background:var(--c-blue-50);color:var(--c-g600)}
+.season-routes{max-width:620px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(0,72,107,.2)}
+.season-routes>div{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;padding:12px 0;gap:12px}
+.season-routes>div>span{font-size:18px;font-weight:700}
+.season-routes i{font-size:28px;font-style:normal;color:var(--c-blue-700)}
+.season-routes b{font:600 48px/1.2 var(--f-en);color:var(--c-blue-navy)}
+.season-routes b small{font:700 17px var(--f-jp);margin-left:8px}
+.fclp .season-routes>p{font-size:11px;line-height:1.8;margin:16px 0 0;color:var(--c-g600)}
+.fclp .opening-flow{list-style:none;max-width:840px;margin:40px auto 0;padding:0}
+.opening-flow li{display:grid;grid-template-columns:64px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--c-g200)}
+.flow-no{font:500 30px/1.5 var(--f-en);color:var(--c-blue-700)}
+.fclp .opening-flow h3{font-size:24px;line-height:1.6;color:var(--c-blue-navy);margin:0 0 10px}
+.fclp .opening-flow p{font-size:16px;line-height:1.9;margin:0}
+.fclp .opening-note{max-width:840px;margin:24px auto 0;padding:24px;background:var(--c-blue-50);font-size:14px;line-height:1.9}
+@media(max-width:600px){
+ .flow-lead-line{display:block}
+ .fclp #economics .staffing-intro p{font-size:15px}
+ .fclp #economics .bep-formula .formula-payoff{font-size:18px;line-height:1.9}
+ .formula-main{gap:12px}
+ .formula-main .formula-answer{justify-content:center}
+ .fclp .emp .ev .approx-prefix{font-size:22px}
+ .fclp .emp .emp-note{font-size:10px}
+ .fclp #cost .funding-plan{padding:28px 18px}
+ .fclp #cost .funding-caption{font-size:14px}
+ .funding-total b{font-size:40px}
+ .funding-total b span{font-size:22px;padding:0 2px}
+ .funding-total>small{font-size:14px;margin-left:4px}
+ .fclp #cost .funding-context{font-size:14px}
+ .funding-method{gap:18px;padding:22px 0;margin:22px 0}
+ .funding-method span{font-size:12px;margin-bottom:10px}
+ .funding-method b{font-size:34px}
+ .funding-method b small{font-size:11px;margin-left:2px}
+ .funding-method b.funding-loan{font-size:20px}
+ .funding-method i{font-size:20px}
+ .fclp #cost .funding-note,.fclp #cost .funding-footnote{font-size:11px}
+ .loan-support{grid-template-columns:92px 1fr;gap:20px}
+ .loan-result>b{font-size:56px}
+ .loan-result>b small{font-size:16px;margin-left:3px}
+ .fclp #cost .loan-result p{font-size:12px}
+ .fclp #cost .loan-support-title{font-size:18px}
+ .fclp #cost .loan-support-title br{display:initial}
+ .fclp #cost .loan-support-title+p{font-size:13px}
+ .fclp #cost .csr.working-capital{padding:24px 16px}
+ .fclp #cost .working-note{padding:0 16px 20px;font-size:12px}
+ .season-routes{margin-top:24px;padding-top:16px}
+ .season-routes>div{grid-template-columns:1fr 24px 1fr;gap:8px}
+ .season-routes>div>span{font-size:14px}
+ .season-routes i{font-size:22px}
+ .season-routes b{font-size:36px}
+ .season-routes b small{font-size:13px;margin-left:4px}
+ .fclp .season-routes>p{font-size:10px}
+ .opening-flow li{grid-template-columns:36px 1fr;gap:16px;padding:24px 0}
+ .flow-no{font-size:23px}
+ .fclp .opening-flow h3{font-size:21px}
+ .fclp .opening-flow p{font-size:15px}
+ .fclp .opening-note{font-size:13px;padding:20px}
+}
+@media(max-width:360px){
+ .fclp #economics .staffing-intro p{font-size:14px}
+ .fclp #cost .funding-plan{padding-inline:14px}
+ .funding-total b{font-size:34px}
+ .funding-method{gap:12px}
+ .funding-method b{font-size:30px}
+ .funding-method b.funding-loan{font-size:18px}
+ .loan-support{gap:14px;grid-template-columns:80px 1fr}
+ .fclp #cost .loan-support-title{font-size:17px}
+ .season-routes>div>span{font-size:12px}
+ .season-routes b{font-size:32px}
+ .season-routes b small{font-size:12px}
+}

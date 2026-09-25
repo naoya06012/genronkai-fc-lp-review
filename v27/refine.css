@@ -1,0 +1,176 @@
+
+/* Refined v3: photographs for atmosphere; diagrams only where they explain. */
+.fclp .hero{max-width:none;display:block;min-height:660px;padding:80px max(40px,calc((100vw - 1120px)/2));overflow:hidden;background:var(--c-blue-navy)}
+.fclp .hero-background{position:absolute;inset:0;margin:0;z-index:0}
+.hero-background img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 46%}
+.fclp .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,72,107,.95) 0%,rgba(0,72,107,.9) 43%,rgba(0,72,107,.36) 61%,rgba(0,72,107,.02) 85%);pointer-events:none}
+.hero-background figcaption{position:absolute;right:24px;bottom:20px;z-index:3;font-size:10px;color:#fff;background:rgba(0,72,107,.88);padding:4px 8px}
+.fclp .hero-copy{position:relative;z-index:2;padding:0;max-width:536px}
+.fclp .hero .fclp-inner{padding:0}
+.fclp .hero-kicker{color:#fff;font-size:14px;letter-spacing:.1em;margin-bottom:24px}
+.hero-kicker::before{background:var(--c-blue-l);width:32px}
+.fclp .hero-title{font-size:60px;line-height:1.5;color:#fff;font-weight:900;letter-spacing:.01em;margin-bottom:24px;white-space:nowrap}
+.fclp .hero-title>span{font-size:.79em}.fclp .hero-title b{color:#fff}
+.fclp .hero-deck{font-size:16px;color:#fff;line-height:2;max-width:460px;margin-bottom:32px}
+.fclp .hero-deck strong{color:#fff;border-bottom:1px solid var(--c-blue-l);padding-bottom:3px;margin-right:.2em}
+.hero-action{display:inline-flex;padding:8px;background:#fff;border-radius:8px}
+.fclp .hero .btn{min-width:352px;max-width:100%;box-shadow:none}
+.fclp .hero .btn:hover{background:#DE8440}
+/* Compact four-card comparison with a unique, restrained icon per topic. */
+.fclp .nones{gap:24px;max-width:1024px;margin-inline:auto}
+.fclp .none{padding:0;border:1px solid var(--c-g200);box-shadow:none;border-radius:12px;background:#fff}
+.fclp .none:last-child{padding-bottom:0}
+.fclp .none-h{display:flex;align-items:center;justify-content:flex-start;gap:20px;background:#fff;color:var(--c-blue-navy);padding:24px 28px 20px;margin:0}
+.fclp .none-h::before{display:none}
+.model-icon{width:56px;height:56px;flex:none;color:var(--c-blue-navy)}
+.fclp .none-title{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.fclp .none-h .t{font-size:23px;font-weight:700;line-height:1.5}
+.fclp .none-h .x{margin:0;padding:0;background:none;border-radius:0;color:var(--c-g600);font-size:14px;font-weight:400}
+.fclp .none-b{padding:0 28px 24px}
+.fclp .none .row{padding:16px 20px;font-size:14px;line-height:1.9}
+.fclp .none .row .lb{font-size:11px;letter-spacing:.06em;margin-bottom:6px}
+.fclp .none .row.a{background:var(--c-g50)}
+.fclp .none .row.b{margin-top:16px;padding:0 0 0 16px}
+.fclp .none .row.b .lb{font-size:12px}
+.fclp .none .row.b .tx{font-size:15px}
+/* Cost drivers become typographic facts, not decorative character scenes. */
+.fclp .costlead .eb{display:flex;justify-content:center;flex-wrap:wrap;gap:0 .25em;font-size:24px;color:var(--c-blue-navy);font-weight:700;line-height:1.7;margin:0 auto 20px}
+.fclp .costlead .eb span{display:inline-block;border-bottom:2px solid var(--c-blue-200)}
+.fclp .costlead .hd{font-size:40px}
+.cost-cause{display:grid;grid-template-columns:1fr 32px 1fr;gap:16px;max-width:960px}
+.cost-cause>.cost-reason{display:flex;text-align:left;align-items:center;justify-content:center;gap:24px;padding:28px 24px;background:#fff;border:1px solid var(--c-g200);border-radius:12px;align-self:stretch}
+.cost-reason-icon{width:72px;flex:none;color:var(--c-blue-700)}.cost-reason-icon svg{width:100%;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.fclp .cost-cause .reason-label{font-size:10px;font-weight:500;letter-spacing:.12em;color:var(--c-g600);margin-bottom:8px}
+.fclp .cost-cause .reason-value{display:flex;align-items:baseline;gap:5px;white-space:nowrap;line-height:1.4;color:var(--c-blue-navy)}
+.fclp .cost-cause .reason-value b{font:600 42px/1.3 var(--f-en);letter-spacing:-.04em;margin:0;display:inline}
+.fclp .cost-cause .reason-value b span{display:inline;font:500 22px var(--f-jp);margin:0 2px}
+.fclp .cost-cause .reason-value em{font:700 15px/1.5 var(--f-jp);font-style:normal}
+.fclp .cost-cause .reason-caption{font-size:13px;margin-top:8px;white-space:nowrap}
+.cause-plus{font-weight:400;font-size:24px;color:var(--c-g300)}
+.cause-down{color:var(--c-blue-700);font-size:32px;margin:20px 0}
+.fclp .give .study-photo img{padding:0;box-shadow:none;border-radius:8px;aspect-ratio:1.65;object-fit:cover}
+.fclp .give .study-photo figcaption{font-size:11px}
+/* The number and its meaning now share one clear centre of gravity. */
+.fclp .emp{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;padding:48px 24px;background:var(--c-blue-50);border:1px solid var(--c-blue-200);max-width:960px;margin:48px auto 0}
+.fclp .emp .ek{font-size:14px;line-height:1.9;margin:0}
+.fclp .emp .ev{display:flex;align-items:baseline;justify-content:center;font-size:96px;margin:20px 0 24px;line-height:1.15;letter-spacing:-.06em}
+.fclp .emp .ev .tbdw{color:var(--c-blue-700)}
+.fclp .emp .ev small{font-size:36px;letter-spacing:0;margin-left:8px}
+.fclp .emp .es{font-size:26px;line-height:1.9;margin:0}
+.fclp .emp .es mark{background:none}
+/* Seasonal opportunity: a strong editorial headline and a concrete route. */
+.fclp .card-now{max-width:1024px;border:1px solid var(--c-blue-200);background:#fff;border-radius:12px;box-shadow:none}
+.season-head{background:var(--c-blue-navy);color:#fff;padding:48px 40px 40px;text-align:center}
+.fclp .card-now .cn-top{display:inline-block;background:none;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:6px 16px;font-size:12px;color:#fff;letter-spacing:.06em;margin:0 0 24px}
+.fclp .season-pre{font-size:22px;font-weight:500;line-height:1.8;margin:0 0 8px}
+.fclp .season-title{font-size:56px;font-weight:900;line-height:1.45;letter-spacing:.04em;margin:0;color:#fff}
+.season-title span{color:var(--c-blue-l)}
+.fclp .season-sub{font-size:16px;line-height:1.9;margin:20px 0 0;color:#fff}
+.season-dates{display:flex;justify-content:center;align-items:center;gap:48px;margin:32px auto 0;max-width:600px;padding-top:32px;border-top:1px solid rgba(255,255,255,.24)}
+.season-dates>div{flex:1}
+.season-dates span{display:block;font-size:12px;letter-spacing:.08em;color:var(--c-blue-100);margin-bottom:12px}
+.season-dates b{display:block;white-space:nowrap;font:600 44px/1.3 var(--f-en);letter-spacing:-.02em}
+.season-dates b small{font:400 24px var(--f-jp);padding:0 4px}
+.season-dates b em{font:500 16px var(--f-jp);font-style:normal;margin-left:4px}
+.season-dates>i{font-style:normal;font-size:32px;color:var(--c-blue-l)}
+.fclp .cn-body{padding:40px}
+.fclp .cn-h{font-size:18px;line-height:1.8;font-weight:700;text-align:center}
+.fclp .tl{margin-top:32px;gap:24px}
+.fclp .tl .m{font-size:18px;background:var(--c-blue-50);color:var(--c-blue-700);margin-bottom:16px;border-radius:4px}
+.fclp .tl .now .m{background:var(--c-blue-700);color:#fff}
+.fclp .tl .goal .m{background:var(--c-blue-navy);color:#fff}
+.fclp .tl .bd b{font-size:14px;font-weight:700}.fclp .tl .bd span{font-size:12px}
+.fclp .cn-cap{padding:20px 24px;background:var(--c-g50);border-radius:6px;margin:32px 0 0;font-size:13px}
+.season-action{text-align:center;background:var(--c-blue-50);border-top:1px solid var(--c-blue-200);padding:32px 24px}
+.fclp .season-action p{font-size:17px;line-height:1.8;color:var(--c-blue-navy);margin:0 0 20px}
+.season-action>small{display:block;font-size:11px;color:var(--c-g600);margin-top:16px;line-height:1.9}
+.fclp .offer{padding-top:8px}
+@media(min-width:1600px){.hero-background img{object-position:center 42%}.fclp .hero{min-height:720px;padding-block:104px}}
+@media(max-width:1100px){
+.fclp .hero{min-height:620px;padding:72px 40px}.fclp .hero-title{font-size:52px}.fclp .hero-copy{max-width:480px}
+.cost-cause>.cost-reason{gap:16px;padding:24px 16px}.cost-reason-icon{width:56px}
+.fclp .cost-cause .reason-value b{font-size:36px}.fclp .cost-cause .reason-value em{font-size:13px}
+}
+@media(max-width:860px){
+.fclp .hero{padding:64px 32px;min-height:584px}.fclp .hero-title{font-size:48px}
+.hero-background img{object-position:58% center}.fclp .hero-copy{max-width:440px}
+.fclp .hero::after{background:linear-gradient(90deg,rgba(0,72,107,.95) 0%,rgba(0,72,107,.88) 51%,rgba(0,72,107,.2) 100%)}
+.fclp .hero .btn{font-size:16px;min-width:336px}
+.fclp .none-h{padding:24px 20px 16px;gap:14px}.model-icon{width:48px;height:48px}
+.fclp .none-h .t{font-size:21px}.fclp .none-h .x{font-size:12px}.fclp .none-title{gap:4px 8px}
+.fclp .none-b{padding:0 20px 24px}.fclp .none .row{padding:12px 16px}.fclp .none .row.b{padding-left:12px}
+.cost-cause>.cost-reason{display:flex;flex-direction:column;text-align:center;gap:16px}
+.fclp .cost-cause .reason-value{justify-content:center}
+.fclp .costlead .eb{font-size:22px}.fclp .costlead .hd{font-size:34px}
+.season-head{padding:40px 24px}.fclp .season-title{font-size:44px}
+.fclp .cn-body{padding:32px}.fclp .tl{gap:16px}
+.fclp .tl li:not(:last-child) .m::after{right:-17px;font-size:16px}
+}
+@media(max-width:600px){
+.fclp .hero{display:block;padding:268px 20px 32px;min-height:0}
+.hero-background img{object-position:66% top;height:100%;object-fit:cover}
+.fclp .hero::after{background:linear-gradient(180deg,rgba(0,72,107,0) 0%,rgba(0,72,107,.02) 24%,rgba(0,72,107,.87) 38%,rgba(0,72,107,.95) 62%,rgba(0,72,107,.98) 100%)}
+.fclp .hero-copy{padding:0;max-width:none}
+.fclp .hero-kicker{font-size:11px;margin-bottom:12px;gap:12px}
+.fclp .hero-title{font-size:clamp(36px,10.2vw,56px);margin-bottom:16px;line-height:1.45;white-space:nowrap;letter-spacing:.01em}
+.fclp .hero-title>span{font-size:.8em}
+.fclp .hero-deck{font-size:13px;line-height:2;margin-bottom:24px;max-width:380px}
+.hero-action{display:flex;width:100%;padding:6px}
+.fclp .hero .btn{min-width:0;width:100%;font-size:16px;min-height:68px}
+.hero-background figcaption{font-size:9px;right:12px;bottom:auto;top:16px}
+.fclp .nones{gap:20px}
+.fclp .none-h{padding:24px 24px 20px;gap:20px}
+.model-icon{width:52px;height:52px}
+.fclp .none-h .t{font-size:22px}.fclp .none-h .x{font-size:13px}
+.fclp .none-b{padding:0 24px 24px}
+.fclp .none .row{font-size:14px;line-height:1.85;padding:14px 16px}
+.fclp .none .row.b .tx{font-size:14px}
+.fclp .costlead .eb{font-size:20px;line-height:1.8;max-width:340px;gap:0;margin-bottom:24px}
+.fclp .costlead .eb span{border:0}
+.fclp .costlead .hd{font-size:clamp(22px,5.8vw,30px)}
+.cost-cause{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:6px}
+.cost-cause>.cost-reason{padding:20px 8px;gap:12px;border-radius:8px}
+.cost-reason-icon{width:56px}
+.fclp .cost-cause .reason-label{font-size:9px;letter-spacing:.04em}
+.fclp .cost-cause .reason-value{flex-wrap:wrap;gap:2px;line-height:1.2;white-space:normal}
+.fclp .cost-cause .reason-value b{font-size:30px}
+.fclp .cost-cause .reason-value b span{font-size:16px}
+.fclp .cost-cause .reason-value em{font-size:11px}
+.fclp .cost-cause .reason-caption{font-size:10px;letter-spacing:0;margin-top:12px}
+.cause-plus{font-size:16px}
+.fclp .emp{padding:32px 20px;margin-top:32px}
+.fclp .emp .ek{font-size:11px}
+.fclp .emp .ev{font-size:80px;margin:16px 0 20px}.fclp .emp .ev small{font-size:28px}
+.fclp .emp .es{font-size:20px;line-height:1.9}
+.season-head{padding:32px 20px}
+.fclp .card-now .cn-top{font-size:10px;padding:6px 10px;margin-bottom:24px}
+.fclp .season-pre{font-size:17px}
+.fclp .season-title{font-size:40px;line-height:1.4}
+.fclp .season-sub{font-size:13px;margin-top:20px}
+.season-dates{gap:16px;padding-top:24px;margin-top:24px}
+.season-dates span{font-size:10px;margin-bottom:12px}
+.season-dates b{font-size:30px}.season-dates b small{font-size:16px;padding:0 2px}
+.season-dates b em{font-size:12px;margin-left:2px}.season-dates>i{font-size:22px}
+.fclp .cn-body{padding:28px 24px}.fclp .cn-h{font-size:16px;text-align:left}
+.fclp .tl{display:block;margin-top:24px}
+.fclp .tl li{display:grid;grid-template-columns:84px minmax(0,1fr);gap:20px;padding:0 0 24px}
+.fclp .tl li:last-child{padding-bottom:0}
+.fclp .tl .m{font-size:14px;line-height:1.6;padding:10px 4px;margin:0;align-self:start}
+.fclp .tl li:not(:last-child) .m::after{content:"↓";left:0;right:0;top:calc(100% + 16px);text-align:center;font-size:18px;line-height:1}
+.fclp .tl .bd b{font-size:13px}.fclp .tl .bd span{font-size:11px;margin-top:6px}
+.fclp .cn-cap{font-size:12px;padding:16px;margin-top:24px}
+.season-action{padding:28px 20px}
+.fclp .season-action p{font-size:16px}
+.fclp .season-action .btn{min-width:0;width:100%;font-size:15px}
+.season-action>small{font-size:10px}
+}
+@media(max-width:360px){
+.fclp .hero{padding-inline:16px}.fclp .hero .btn{font-size:14px}
+.fclp .none-h{padding-inline:20px;gap:16px}.fclp .none-h .t{font-size:20px}
+.fclp .cost-cause .reason-value b{font-size:26px}
+.fclp .cost-cause .reason-value em{font-size:10px}
+.fclp .cost-cause .reason-caption{font-size:9px}
+.fclp .season-title{font-size:36px}
+.fclp .cn-body{padding-inline:20px}
+}
+
