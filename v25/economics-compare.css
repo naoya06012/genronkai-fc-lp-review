@@ -1,0 +1,92 @@
+/* v14: totals belong to the table; mechanism leads into the student-count comparison. */
+.fclp #economics .monthly-comparison{max-width:960px;margin:0 auto}
+.monthly-comparison .cost-scroll-heading{padding:0 0 20px}
+.fclp .monthly-comparison h3{font-size:24px;line-height:1.5;margin:0;color:var(--c-blue-navy)}
+.monthly-comparison .cost-table-frame{border:1px solid var(--c-g200);border-radius:12px;overflow:hidden;background:#fff}
+.monthly-comparison table{border-collapse:collapse;width:100%;table-layout:fixed;text-align:center;line-height:1.6}
+.monthly-comparison .item-col{width:26%}
+.monthly-comparison th,.monthly-comparison td{padding:18px 24px;border-bottom:1px solid var(--c-g200);vertical-align:middle}
+.monthly-comparison th:first-child{text-align:left;font-size:14px;font-weight:500}
+.monthly-comparison thead th{background:var(--c-g100);color:var(--c-g700);font-size:18px}
+.monthly-comparison thead th:first-child{background:var(--c-g50);font-size:13px;font-weight:400}
+.monthly-comparison thead th:last-child{background:var(--c-blue-navy);color:#fff;font-size:24px}
+.monthly-comparison thead small,.monthly-comparison td>small:first-child{display:block}
+.monthly-comparison thead small{margin-top:4px}
+.monthly-comparison small{font-size:12px;font-weight:400}
+.monthly-comparison td{white-space:nowrap}
+.monthly-comparison td:last-child{background:var(--c-blue-50);color:var(--c-blue-navy)}
+.monthly-comparison td b{font:600 30px/1.4 var(--f-en);margin-right:3px}
+.monthly-comparison .variable span{display:block;font-size:14px;font-weight:500}
+.monthly-comparison tfoot th,.monthly-comparison tfoot td{background:var(--c-g100);padding-block:24px;border-bottom:0}
+.monthly-comparison tfoot td b{font-size:48px;color:var(--c-g600)}
+.monthly-comparison tfoot td:last-child{background:var(--c-blue-navy);color:#fff}
+.monthly-comparison tfoot td:last-child b{color:#fff}
+.total-bar{height:12px;margin-top:12px;background:rgba(100,120,130,.12);overflow:hidden;border-radius:2px}
+.total-bar i{display:block;height:100%;background:var(--c-g500)}
+.monthly-comparison td:last-child .total-bar{background:rgba(255,255,255,.12)}
+.monthly-comparison td:last-child .total-bar i{background:var(--c-blue-200)}
+.fclp #economics .staffing-intro{max-width:760px;margin:40px auto 0}
+.fclp #economics .staffing-intro p{font-size:16px;line-height:1.95;margin:0}
+.fclp #economics .staffing-intro p+p{margin-top:14px}
+.staffing-intro strong{color:var(--c-blue-navy);font-weight:700}
+.staffing-intro p{text-wrap:pretty}
+.bep-comparison>figcaption span{display:inline-block}
+@media(min-width:601px){.monthly-comparison th:first-child br{display:none}}
+.fclp #economics .staffing-visual{margin-top:12px}
+.fclp #economics .bep-comparison{max-width:840px;margin:36px auto 0}
+.bep-comparison>figcaption{font-size:20px;font-weight:700;color:var(--c-blue-navy);line-height:1.7;margin-bottom:24px;text-align:center}
+.bep-pair{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.bep-side{min-width:0;text-align:center;padding:24px;background:#fff;border-top:3px solid var(--c-g300);color:var(--c-g500)}
+.bep-side.genron{background:var(--c-blue-50);border-color:var(--c-blue);color:var(--c-blue-700)}
+.fclp #economics .bep-label{font-size:16px;line-height:1.7;font-weight:700;margin:0 0 8px;color:inherit}
+.fclp #economics .bep-value{font:600 76px/1.2 var(--f-en);margin:0 0 20px;color:inherit}
+.bep-value small{font:700 20px var(--f-jp);margin-left:6px}
+.bep-people{display:grid;grid-template-columns:repeat(10,1fr);gap:7px 6px;max-width:260px;margin:0 auto}
+.bep-people svg{display:block;width:100%;height:28px;fill:currentColor}
+.bep-side.genron .bep-people{color:var(--c-blue)}
+.fclp #economics .bep-note{font-size:11px;line-height:1.85;color:var(--c-g600);margin:16px 0 0}
+.fclp #economics .bep-formula{max-width:840px;margin:24px auto 0;display:flex;align-items:baseline;justify-content:center;gap:24px;padding:20px 0;border-bottom:1px solid var(--c-g200)}
+.fclp #economics .bep-formula p{font-size:18px;line-height:1.8;margin:0;color:var(--c-blue-navy)}
+.fclp #economics .bep-formula .formula-label{font-size:13px;color:var(--c-g600)}
+.bep-formula span{white-space:nowrap;display:inline-block}
+.bep-formula b{font-size:24px;color:var(--c-blue-700)}
+@media(max-width:600px){
+ .monthly-comparison th,.monthly-comparison td{padding:16px 8px}
+ .monthly-comparison th:first-child{font-size:12px}
+ .monthly-comparison thead th{font-size:13px;height:96px}
+ .monthly-comparison thead th:first-child{font-size:11px}
+ .monthly-comparison thead th:last-child{font-size:19px}
+ .monthly-comparison small{font-size:11px}
+ .monthly-comparison thead small{font-size:10px}
+ .monthly-comparison td b{font-size:24px;letter-spacing:-.02em}
+ .monthly-comparison .variable span{font-size:12px}
+ .monthly-comparison tfoot td b{font-size:34px}
+ .total-bar{height:8px}
+ .fclp #economics .staffing-intro{margin-top:32px}
+ .fclp #economics .staffing-intro p{font-size:15px;line-height:1.95}
+ .fclp #economics .staffing-visual{margin-top:8px}
+ .bep-comparison>figcaption{font-size:17px;text-align:left;margin-bottom:20px;text-wrap:balance}
+ .bep-pair{gap:12px}
+ .bep-side{padding:18px 12px 22px}
+ .fclp #economics .bep-label{font-size:12px;min-height:40px;display:flex;align-items:center;justify-content:center}
+ .fclp #economics .bep-value{font-size:64px;margin-bottom:16px}
+ .bep-value small{font-size:16px;margin-left:4px}
+ .bep-people{gap:5px 3px}
+ .bep-people svg{height:auto;aspect-ratio:16/28}
+ .fclp #economics .bep-formula{display:block;text-align:center;padding:16px 0;margin-top:16px}
+ .fclp #economics .bep-formula .formula-label{font-size:12px;margin-bottom:6px}
+ .fclp #economics .bep-formula p{font-size:15px}
+ .bep-formula b{font-size:21px}
+}
+@media(max-width:360px){
+ .monthly-comparison th,.monthly-comparison td{padding-inline:6px}
+ .monthly-comparison th:first-child{font-size:11px}
+ .monthly-comparison td b{font-size:22px}
+ .monthly-comparison tfoot td b{font-size:30px}
+ .monthly-comparison thead th{font-size:12px}
+ .monthly-comparison thead th:last-child{font-size:18px}
+ .bep-side{padding-inline:10px}
+ .bep-people{gap:5px 2px}
+ .fclp #economics .bep-formula p{font-size:13px}
+ .bep-formula b{font-size:19px}
+}

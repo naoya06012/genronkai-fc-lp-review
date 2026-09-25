@@ -1,0 +1,20 @@
+/* v19: one consistent heading rhythm; centered introduction; distinct footnote scale. */
+.fclp #model .model-heading{font-size:32px;line-height:1.65;letter-spacing:0;text-align:center;margin:0 auto 28px;max-width:960px}
+.fclp #model .model-heading .heading-context,.fclp #model .model-heading .heading-main{display:block;font-size:inherit;line-height:inherit;letter-spacing:inherit;margin:0;padding:0;text-align:center}
+.fclp #model .model-heading .heading-context{font-weight:700}
+.fclp #model .model-heading .heading-main{font-weight:900}
+.fclp #model .model-lead{max-width:840px;margin:0 auto 40px;text-align:center;font-size:16px;line-height:1.95;letter-spacing:0}
+.fclp #model .model-lead strong{display:block;margin-top:14px;font-size:16px;line-height:1.95}
+.model-list-line,.model-answer-line{display:inline-block}
+.offer-title-unit{display:inline-block}
+.fclp #economics .colnote{font-size:11px;line-height:1.8;color:var(--c-g600);margin-top:14px}
+@media(max-width:600px){
+ .fclp #model .model-heading{font-size:28px;line-height:1.6;margin-bottom:24px}
+ .fclp #model .model-lead{font-size:15px;line-height:1.95;margin-bottom:36px}
+ .fclp #model .model-lead strong{font-size:15px;line-height:1.95;margin-top:14px}
+ .model-list-line,.model-answer-line{display:block}
+ .fclp #economics .colnote{font-size:10px;line-height:1.85}
+}
+@media(max-width:360px){
+ .fclp #model .model-heading{font-size:25px}
+}
