@@ -1,0 +1,28 @@
+/* v17: opening costs first; operating reserve is a separate, additional amount. */
+.funding-overview{max-width:840px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fclp #cost .funding-overview .funding-plan,.fclp #cost .funding-operating{margin:0;padding:28px 24px;text-align:center;border-radius:12px}
+.fclp #cost .funding-operating{border:1px solid var(--c-blue-200);background:#fff}
+.fclp #cost .funding-overview .funding-caption{font-size:13px;line-height:1.9;font-weight:500;color:var(--c-g600)}
+.fclp #cost .funding-title{font-size:24px;line-height:1.6;margin:12px 0 0;color:var(--c-blue-navy)}
+.funding-overview .funding-total b{font-size:46px}
+.funding-overview .funding-total b span{font-size:24px;padding:0 2px}
+.funding-overview .funding-total>small{font-size:14px;margin-left:4px}
+.funding-total i{font:400 24px var(--f-jp);margin-right:3px}
+.fclp #cost .funding-overview .funding-context{font-size:14px;line-height:1.9}
+.fclp #cost .funding-context br{display:initial}
+.fclp #cost .funding-operating-note{font-size:11px;line-height:1.9;color:var(--c-g600);margin:16px 0 0;padding-top:14px;border-top:1px solid var(--c-g200);text-align:left}
+.funding-finance{grid-column:1/-1;padding:0 24px}
+.funding-finance .funding-method{margin:4px 0 16px;padding:24px 0;border-top:0}
+@media(max-width:760px){
+ .funding-overview{grid-template-columns:1fr;gap:16px}
+ .fclp #cost .funding-overview .funding-plan,.fclp #cost .funding-operating{padding:24px 20px}
+ .funding-overview .funding-total b{font-size:44px}
+ .funding-finance{padding:0 12px}
+}
+@media(max-width:360px){
+ .fclp #cost .funding-overview .funding-plan,.fclp #cost .funding-operating{padding-inline:16px}
+ .funding-overview .funding-total b{font-size:38px}
+ .funding-overview .funding-total b span,.funding-total i{font-size:20px}
+ .fclp #cost .funding-overview .funding-caption{font-size:12px}
+ .funding-finance{padding:0}
+}

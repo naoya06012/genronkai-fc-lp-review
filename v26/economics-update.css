@@ -1,0 +1,59 @@
+/* v12: role copy and unit-economics additions. Existing SP comparison stays three columns. */
+.econ-unit{display:inline-block}
+.fclp .role-frequency{display:block;margin-top:6px}
+.econ-sp-break{display:none}
+.fclp #economics .calc .u br{display:initial}
+.fclp #economics .colnote{font-size:13px;line-height:1.9;max-width:960px;text-align:left}
+.fclp #economics .staffing-explanation,.fclp #economics .unit-comparison{max-width:960px;margin:56px auto 0}
+.fclp #economics .staffing-explanation h3,.fclp #economics .unit-comparison h3,.fclp #economics .bep-heading h3{font-size:28px;line-height:1.55;letter-spacing:0;color:var(--c-blue-navy);margin:0 0 20px}
+.staffing-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.staffing-pair>div{padding:24px;background:#fff;border:1px solid var(--c-g200);border-radius:12px}
+.staffing-pair>div:last-child{background:var(--c-blue-50);border-color:var(--c-blue-200)}
+.fclp #economics .staffing-pair p{font-size:15px;line-height:1.9;margin:0}
+.fclp #economics .staffing-pair .staffing-label{font-size:17px;font-weight:700;color:var(--c-blue-navy);margin-bottom:12px}
+.unit-intro{font-size:17px;margin-bottom:24px}
+.unit-table-frame{border:1px solid var(--c-g200);border-radius:12px;overflow:hidden;background:#fff}
+.fclp .unit-comparison table{border-collapse:collapse;width:100%;table-layout:fixed;text-align:center}
+.unit-comparison caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.fclp .unit-comparison th,.fclp .unit-comparison td{padding:22px 16px;border-bottom:1px solid var(--c-g200);vertical-align:middle;line-height:1.7}
+.fclp .unit-comparison th:first-child{text-align:left;font-size:14px;font-weight:500;background:var(--c-g50)}
+.fclp .unit-comparison thead th{font-size:18px;background:#fff;color:var(--c-blue-navy)}
+.fclp .unit-comparison thead th:last-child{background:var(--c-blue-navy);color:#fff}
+.fclp .unit-comparison td:last-child{background:var(--c-blue-50);color:var(--c-blue-700)}
+.fclp .unit-comparison td b{font:600 32px/1.5 var(--f-en);white-space:nowrap}
+.fclp .unit-comparison td small{font-size:13px;margin-left:4px}
+.fclp .unit-comparison .unit-ratio td b{font-size:42px}
+.fclp .unit-comparison tbody tr:last-child>*{border-bottom:0}
+.fclp #economics .unit-detail,.fclp #economics .gross-explanation{font-size:15px;line-height:1.9;margin:24px auto 0;max-width:840px;text-align:left}
+.fclp #economics .model-note{font-size:12px;line-height:1.9;color:var(--c-g600);max-width:840px;margin:16px auto 0;text-align:left}
+.fclp #economics .bep-heading{margin:56px auto 0;max-width:840px}
+.fclp #economics .bep-heading p{font-size:16px;line-height:1.9;margin:0}
+.fclp #economics .calc{margin-top:24px}
+.fclp #economics .calc .bep-rounding{font-size:16px;color:var(--c-blue-navy);margin-bottom:16px}
+.fclp #economics .calc .people{grid-template-columns:repeat(8,1fr);max-width:240px;gap:6px;margin:20px 0 16px}
+.fclp #economics .calc .people svg{fill:var(--c-blue);height:25px}
+.sp-cost-comparison sup{font-size:9px;vertical-align:super}
+@media(max-width:760px){
+  .staffing-pair{grid-template-columns:1fr;gap:16px}
+  .fclp #economics .staffing-explanation h3,.fclp #economics .unit-comparison h3,.fclp #economics .bep-heading h3{font-size:24px;line-height:1.6}
+  .staffing-pair>div{padding:20px}
+  .fclp #economics .calc .people{margin-inline:auto}
+}
+@media(max-width:600px){
+  .fclp #economics .econ-sp-break{display:initial}
+  .fclp .unit-comparison th,.fclp .unit-comparison td{padding:18px 8px}
+  .fclp .unit-comparison thead th{font-size:13px}
+  .fclp .unit-comparison thead th:last-child{font-size:18px}
+  .fclp .unit-comparison th:first-child{font-size:12px}
+  .fclp .unit-comparison td{font-size:13px}
+  .fclp .unit-comparison td b{font-size:23px;letter-spacing:-.035em;display:block}
+  .fclp .unit-comparison td small{font-size:11px;margin:0}
+  .fclp .unit-comparison .unit-ratio td b{font-size:32px;display:inline;margin-right:3px}
+  .fclp #economics .calc .u{font-size:11px}
+}
+@media(max-width:360px){
+  .fclp .unit-comparison td b{font-size:20px}
+  .fclp .unit-comparison th,.fclp .unit-comparison td{padding-inline:6px}
+  .fclp .unit-comparison th:first-child{font-size:11px}
+  .fclp .unit-comparison .unit-ratio td b{font-size:29px}
+}

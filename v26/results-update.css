@@ -1,0 +1,120 @@
+/* v15: deliberate copy lines, a prominent equation, and aggregate performance. */
+.fclp #economics .staffing-intro{max-width:840px;text-align:left}
+.fclp #economics .staffing-intro p{line-height:1.95;text-wrap:wrap}
+.fclp #economics .staffing-intro p+p{margin-top:20px}
+.staffing-line{display:block}
+.intro-chunk{display:inline-block}
+.result-lead-line{display:inline-block}
+.fclp #economics .bep-formula{display:flex;align-items:center;justify-content:center;gap:20px;padding:28px 16px;margin:28px auto 0;background:var(--c-blue-50);border-top:2px solid var(--c-blue);border-bottom:1px solid var(--c-blue-200)}
+.fclp #economics .bep-formula p{display:flex;align-items:center;gap:14px;margin:0;font:600 34px/1.4 var(--f-en);color:var(--c-blue-navy)}
+.bep-formula i{font:400 24px/1 var(--f-jp);color:var(--c-g500)}
+.bep-formula small{font:500 15px/1.4 var(--f-jp);margin-left:4px}
+.fclp #economics .bep-formula .formula-approx{font-size:28px;font-weight:500}
+.fclp #economics .bep-formula b{font:600 64px/1.1 var(--f-en);color:var(--c-blue-700)}
+.bep-formula b small{font-size:24px;font-weight:700}
+.fclp #results .growth-chart{max-width:840px;margin:40px auto 0}
+.growth-chart>figcaption{font-size:14px;font-weight:500;color:var(--c-g600);margin-bottom:32px}
+.growth-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:end}
+.growth-step{height:288px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.fclp #results .growth-count{font:600 48px/1.2 var(--f-en);color:var(--c-blue-700);margin:0 0 12px}
+.growth-count small{font:500 16px var(--f-jp);margin-left:4px}
+.growth-bar{max-height:180px;flex:none;width:100%;background:var(--c-blue);border-radius:4px 4px 0 0}
+.growth-step:nth-child(1) .growth-bar{background:var(--c-blue-200);height:60px}
+.growth-step:nth-child(2) .growth-bar{background:var(--c-blue-l);height:120px}
+.growth-step:nth-child(3) .growth-bar{height:180px}
+.fclp #results .growth-year{width:100%;margin:0;padding:16px 0 0;border-top:1px solid var(--c-blue-navy);text-align:center;font-size:16px;font-weight:700;color:var(--c-blue-navy)}
+.growth-best{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:32px;padding:24px 0;border-top:1px solid var(--c-g200);border-bottom:1px solid var(--c-g200)}
+.fclp #results .growth-best>p{margin:0;font-size:16px;font-weight:700;color:var(--c-blue-navy)}
+.growth-best>div{display:flex;gap:28px;align-items:center}
+.growth-best span{display:flex;align-items:baseline;gap:8px;white-space:nowrap;color:var(--c-blue-navy)}
+.growth-best small{font-size:14px}
+.growth-best b{font:600 36px/1 var(--f-en)}
+.growth-best em{font-size:14px;font-style:normal}
+.growth-best i{font-size:22px;font-style:normal;color:var(--c-g500)}
+.fclp #results .profit-record{max-width:840px;margin:48px auto 0;padding:40px;background:var(--c-blue-navy);color:#fff;text-align:center;border-radius:12px}
+.fclp #results .profit-context{margin:0;font-size:17px;line-height:1.8;color:#fff}
+.fclp #results .profit-number{margin:18px 0 8px;color:#fff;line-height:1}
+.profit-number b{font:600 112px/1 var(--f-en);letter-spacing:-.04em}
+.profit-number>span{font-size:26px;margin-left:10px}
+.fclp #results .profit-message{font-size:30px;line-height:1.6;color:#fff;margin:0}
+.profit-message span{margin-right:6px}
+.profit-message strong{color:var(--c-blue-200);font-weight:700}
+.fclp #results .profit-cohort{font-size:14px;line-height:1.9;margin:28px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.25);color:#fff}
+.profit-cohort span{display:inline-block}
+.fclp #results .results-note{max-width:840px;margin:16px auto 0;font-size:12px;line-height:1.9;color:var(--c-g600)}
+.simulation-invite{padding:56px 24px;background:#fff}
+.simulation-inner{max-width:1024px;display:flex;align-items:center;gap:40px;margin:0 auto;padding:40px 48px;border-top:2px solid var(--c-blue);border-bottom:1px solid var(--c-g200);background:var(--c-blue-50)}
+.simulation-symbol{width:88px;flex:none;color:var(--c-blue-700)}
+.simulation-symbol svg{display:block;width:100%;height:auto}
+.fclp .simulation-kicker{font-size:15px;line-height:1.8;color:var(--c-blue-700);margin:0 0 12px}
+.fclp .simulation-inner h2{font-size:28px;line-height:1.65;color:var(--c-blue-navy);margin:0;letter-spacing:0}
+.simulation-inner h2 span{display:block}
+.fclp .simulation-copy{font-size:15px;line-height:1.9;color:var(--c-g700);margin:16px 0 0}
+@media(max-width:900px){
+ .fclp #economics .bep-formula{gap:14px;flex-wrap:wrap}
+ .fclp #economics .bep-formula p{font-size:28px;gap:10px}
+ .fclp #economics .bep-formula .formula-approx{font-size:24px}
+ .fclp #economics .bep-formula b{font-size:56px}
+ .simulation-inner{gap:24px;padding:32px}
+ .fclp .simulation-inner h2{font-size:24px}
+}
+@media(max-width:600px){
+ .fclp #economics .staffing-intro{max-width:none}
+ .staffing-line{display:block}
+ .staffing-line-mobile{display:block}
+ .intro-chunk{display:block}
+ .result-lead-line{display:block}
+ .fclp #economics .staffing-intro p{font-size:15px;line-height:1.95}
+ .fclp #economics .staffing-intro p+p{margin-top:20px}
+ .fclp #economics .bep-formula{flex-direction:column;gap:12px;padding:24px 12px}
+ .fclp #economics .bep-formula p{font-size:29px;gap:14px}
+ .fclp #economics .bep-formula .formula-approx{font-size:27px}
+ .fclp #economics .bep-formula b{font-size:64px}
+ .bep-formula small{font-size:13px;margin-left:3px}
+ .bep-formula b small{font-size:22px}
+ .bep-formula i{font-size:22px}
+ .growth-bars{gap:20px}
+ .growth-step{height:235px}
+ .growth-chart>figcaption{font-size:13px;margin-bottom:8px}
+ .fclp #results .growth-count{font-size:38px;margin-bottom:10px}
+ .growth-count small{font-size:13px;margin-left:3px}
+ .growth-step:nth-child(1) .growth-bar{height:48px}
+ .growth-step:nth-child(2) .growth-bar{height:96px}
+ .growth-step:nth-child(3) .growth-bar{height:144px}
+ .fclp #results .growth-year{font-size:14px;padding-top:12px}
+ .growth-best{display:block;margin-top:28px;padding:22px 0}
+ .fclp #results .growth-best>p{font-size:14px;margin-bottom:16px}
+ .growth-best>div{gap:16px;justify-content:space-between}
+ .growth-best span{gap:4px}
+ .growth-best small,.growth-best em{font-size:12px}
+ .growth-best b{font-size:32px}
+ .fclp #results .profit-record{margin-top:32px;padding:28px 20px;border-radius:12px}
+ .fclp #results .profit-context{font-size:14px;text-wrap:balance}
+ .profit-number b{font-size:96px}
+ .profit-number>span{font-size:22px}
+ .fclp #results .profit-message{font-size:22px}
+ .profit-message span,.profit-message strong{display:inline-block}
+ .fclp #results .profit-cohort{font-size:12px;margin-top:22px;padding-top:18px}
+ .fclp #results .results-note{font-size:11px}
+ .simulation-invite{padding:40px 20px}
+ .simulation-inner{display:block;padding:28px 20px}
+ .simulation-symbol{display:none}
+ .fclp .simulation-kicker{font-size:13px;margin-bottom:14px}
+ .fclp .simulation-inner h2{font-size:20px;line-height:1.7}
+ .simulation-inner h2 span{display:block}
+ .fclp .simulation-copy{font-size:14px}
+ .simulation-copy br{display:none}
+}
+@media(max-width:360px){
+ .fclp #economics .staffing-intro p{font-size:14px}
+ .fclp #economics .bep-formula p{font-size:26px;gap:10px}
+ .growth-bars{gap:16px}
+ .fclp #results .growth-count{font-size:34px}
+ .growth-best>div{gap:8px}
+ .growth-best b{font-size:28px}
+ .fclp #results .profit-record{padding-inline:16px}
+ .fclp #results .profit-message{font-size:20px}
+ .simulation-invite{padding-inline:16px}
+ .simulation-inner{padding-inline:18px}
+ .fclp .simulation-inner h2{font-size:18px}
+}

@@ -1,0 +1,13 @@
+/* v24：開校費用を3層に・モデルケース・フッターの運営会社 */
+@media(min-width:861px){
+ .funding-overview{grid-template-columns:repeat(3,1fr)}
+ .funding-overview .funding-total b{font-size:40px}
+}
+.funding-model{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 12px;margin:0 0 16px;padding:16px;background:var(--c-g50);border-radius:8px;font-size:14px;color:var(--c-g700,#333)}
+.funding-model b{font:600 22px/1.2 var(--f-en);color:var(--c-blue-navy);margin:0 2px}
+.funding-model-label{width:100%;text-align:center;font-size:12px;font-weight:700;color:var(--c-g600)}
+.footer-company{display:grid;grid-template-columns:auto auto;gap:2px 12px;margin:0;font-size:12px;line-height:1.9;color:#fff}
+.footer-company dt{opacity:.7}
+.footer-company dd{margin:0}
+@media(max-width:600px){.footer-company{margin-top:16px;grid-template-columns:auto 1fr}}
+.fclp .role-frequency-note{display:block;margin-top:4px;font-size:12px;line-height:1.7;color:var(--c-g600)}
