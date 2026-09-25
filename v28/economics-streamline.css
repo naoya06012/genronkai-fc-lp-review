@@ -1,0 +1,67 @@
+/* v13: one argument, a shared cost scale, and a compact staffing diagram. */
+.fclp #economics .cost-scale{max-width:960px;margin:28px auto 0;padding:0 32px 28px;border-bottom:1px solid var(--c-g200)}
+.fclp #economics .cost-scale-caption{font-size:13px;color:var(--c-g600);margin:0 0 16px}
+.cost-scale-row+.cost-scale-row{margin-top:20px}
+.cost-scale-label{display:flex;align-items:baseline;justify-content:space-between;gap:16px;line-height:1.4}
+.cost-scale-label>span{font-size:16px;font-weight:700;color:var(--c-g600)}
+.cost-scale-label>b{font:600 44px/1 var(--f-en);color:var(--c-g600);white-space:nowrap}
+.cost-scale-label small{font:500 14px/1 var(--f-jp);margin-left:6px}
+.cost-scale-track{margin-top:10px;height:16px;background:var(--c-g100);border-radius:2px;overflow:hidden}
+.cost-scale-track i{display:block;height:100%;background:var(--c-g500)}
+.genron .cost-scale-label>span,.genron .cost-scale-label>b{color:var(--c-blue-700)}
+.genron .cost-scale-track i{background:var(--c-blue)}
+.fclp #economics .colnote{max-width:896px;font-size:12px;line-height:1.85;margin-top:16px}
+.fclp #economics .staffing-visual{max-width:896px;margin:28px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;padding:24px 0;border-bottom:1px solid var(--c-g200)}
+.staffing-drawing{min-width:0;text-align:center;color:var(--c-g500)}
+.drawing-unit{display:inline-block}
+.staffing-drawing.genron{color:var(--c-blue-700);border-left:1px solid var(--c-g200);padding-left:40px}
+.fclp #economics .drawing-label{font-size:15px;line-height:1.5;font-weight:700;margin:0 0 12px;color:inherit}
+.staffing-drawing svg{display:block;width:100%;max-width:260px;height:auto;margin:0 auto 12px}
+.staffing-drawing svg text{font:20px var(--f-jp);fill:currentColor}
+.fclp #economics .staffing-drawing .drawing-copy{font-size:15px;line-height:1.8;color:var(--c-g700);margin:0}
+.fclp #economics .staffing-drawing .drawing-copy br{display:initial}
+.fclp #economics .staffing-drawing.genron .drawing-copy b{color:var(--c-blue-700)}
+.fclp #economics .drawing-note{grid-column:1/-1;font-size:11px;line-height:1.8;color:var(--c-g600);text-align:right}
+.fclp #economics .calc-bridge{max-width:840px;margin:28px auto 0;font-size:16px;line-height:1.9;text-align:center;color:var(--c-blue-navy)}
+.fclp #economics .calc{border:0;border-radius:0;background:transparent;margin-top:0;padding:28px 0 12px}
+.fclp #economics .calc .big{font-size:88px}
+.fclp #economics .calc .bep-rounding{margin-bottom:12px}
+.fclp #economics .calc .people{margin-top:16px;margin-bottom:12px}
+.fclp #economics .gross-explanation{font-size:14px;margin-top:12px}
+.fclp #economics .model-note{line-height:1.85}
+.fclp #economics .unit-appendix{max-width:840px;margin:24px auto 0;border-top:1px solid var(--c-g200);border-bottom:1px solid var(--c-g200)}
+.unit-appendix>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:14px;font-weight:500;color:var(--c-blue-navy);cursor:pointer;list-style:none;line-height:1.8}
+.unit-appendix>summary::-webkit-details-marker{display:none}
+.unit-appendix>summary:focus-visible{outline:2px solid var(--c-blue-700);outline-offset:4px}
+.unit-appendix>summary i{width:12px;height:12px;position:relative;flex:none}
+.unit-appendix>summary i::before,.unit-appendix>summary i::after{content:"";position:absolute;left:0;top:5px;width:12px;height:1.5px;background:currentColor}
+.unit-appendix>summary i::after{transform:rotate(90deg)}
+.unit-appendix[open]>summary i::after{display:none}
+.fclp #economics .unit-appendix .unit-comparison{margin:0;padding:8px 0 24px}
+.fclp #economics .unit-appendix .unit-intro{font-size:14px;line-height:1.8;margin:0 0 16px}
+.fclp #economics .unit-appendix th,.fclp #economics .unit-appendix td{padding-block:14px}
+@media(max-width:600px){
+ .fclp #economics .cost-scale{padding:0 0 24px;margin-top:20px}
+ .cost-scale-label>span{font-size:13px}
+ .cost-scale-label>b{font-size:36px}
+ .cost-scale-label small{font-size:12px;margin-left:4px}
+ .cost-scale-track{height:12px}
+ .fclp #economics .staffing-visual{position:relative;gap:12px 20px;padding:20px 0;margin-top:20px}
+ .fclp #economics .staffing-visual::before{content:"";position:absolute;left:50%;top:20px;bottom:56px;border-left:1px solid var(--c-g200)}
+ .staffing-drawing.genron{padding-left:0;border-left:0}
+ .fclp #economics .drawing-label{font-size:12px;min-height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center}
+ .fclp #economics .staffing-drawing .drawing-copy{font-size:13px;line-height:1.8;text-align:left}
+ .fclp #economics .staffing-drawing .drawing-copy br{display:none}
+ .fclp #economics .staffing-drawing .drawing-copy b{display:block}
+ .fclp #economics .drawing-note{font-size:10px;text-align:center}
+ .fclp #economics .calc-bridge{font-size:14px;text-align:left;margin-top:24px}
+ .fclp #economics .calc{padding:24px 8px 8px;gap:24px}
+ .fclp #economics .calc .big{font-size:80px}
+ .fclp #economics .calc .people svg{height:22px}
+ .fclp #economics .calc .eq>p:last-child{font-size:13px}
+ .fclp #economics .unit-appendix>summary{font-size:13px}
+}
+@media(max-width:360px){
+ .fclp #economics .staffing-drawing .drawing-copy{font-size:12px}
+ .fclp #economics .calc-bridge .econ-unit{display:inline}
+}
