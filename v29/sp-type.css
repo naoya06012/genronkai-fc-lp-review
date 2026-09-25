@@ -1,0 +1,92 @@
+/* v7: controlled Japanese line breaks and a clear SP type hierarchy. */
+@media(max-width:600px){
+.fclp{line-break:strict;word-break:normal;overflow-wrap:normal}
+.fclp .sp-line{display:block;white-space:nowrap;max-width:100%}
+.fclp .pc-only-break{display:none}
+.fclp .fclp-h2{font-size:32px;line-height:1.5;letter-spacing:0;margin-bottom:28px}
+.fclp .fclp-h2 .heading-context{display:block;font-size:24px;line-height:1.55;font-weight:700;margin-bottom:10px;color:var(--c-blue-navy)}
+.fclp .fclp-h2 .heading-main{display:block;font-size:32px;line-height:1.5;font-weight:900;color:var(--c-blue-700)}
+.fclp #model .heading-main{font-size:clamp(26px,7.6vw,32px)}
+.fclp .fclp-eyebrow{font-size:11px;letter-spacing:.1em;margin-bottom:16px}
+.fclp .fclp-lead{font-size:16px;font-weight:400;line-height:1.95;letter-spacing:.015em;margin-bottom:36px}
+.fclp .fclp-lead strong{font-size:16px;font-weight:700;line-height:1.95;display:inline;margin-top:0}
+.fclp .fclp-lead br.brsp{display:none}
+.fclp .fclp-lead br:not(.brsp){display:initial}
+.fclp .fclp-lead{text-wrap:pretty}
+.fclp .copy-unit{display:inline-block}
+.fclp .so1 .callout-context+br.brsp{display:none}
+.fclp .h3{font-size:27px;line-height:1.6;letter-spacing:0}
+.fclp .costlead .eb{font-size:18px;line-height:1.75;margin-bottom:20px;font-weight:700}
+.fclp .costlead .hd{font-size:34px;line-height:1.4;letter-spacing:0;white-space:normal;margin-bottom:24px}
+.fclp .costsub{font-size:15px;line-height:1.9}
+.fclp .none-h .t{font-size:25px;line-height:1.5}
+.fclp .none .solution-title{font-size:19px;line-height:1.65}
+.fclp .none .row.a .tx{font-size:14px;line-height:1.9}
+.fclp .none .row.b .tx{font-size:15px;line-height:1.9}
+.fclp .give .txt>b{font-size:24px;line-height:1.55;letter-spacing:0}
+.fclp .give .txt>span{font-size:16px;line-height:1.95;margin-top:20px}
+.fclp .give .no{font-size:21px;line-height:1.8}
+.fclp .repb h3{font-size:22px;line-height:1.6;letter-spacing:0}
+.fclp .repb .kk{align-items:start;gap:12px}
+.fclp .repb .kk i{font-size:14px;padding:6px 8px;margin-top:2px}
+.fclp .repb>p{font-size:15px;line-height:1.95;margin-top:24px}
+.fclp .so1{font-size:22px;line-height:1.7;letter-spacing:0;padding:28px 16px}
+.fclp .so1 .callout-context{display:block;font-size:19px;font-weight:500;line-height:1.7}
+.fclp .so1 mark{display:block;font-size:26px;line-height:1.6;margin-top:8px;font-weight:900}
+.fclp .bridge{font-size:24px;line-height:1.65;letter-spacing:0}
+.fclp .csh3{font-size:25px;line-height:1.6;letter-spacing:0}
+.fclp .csh3-context{display:block;font-size:19px;line-height:1.65;font-weight:500;margin-bottom:8px}
+.fclp .emp .es{font-size:22px;letter-spacing:0}
+.fclp .season-pre{font-size:17px}
+.fclp .season-title{font-size:44px;line-height:1.4;letter-spacing:0}
+.fclp .season-sub{font-size:14px;line-height:1.9}
+.fclp .cn-h{font-size:20px;line-height:1.65}
+.fclp .season-action p{font-size:16px}
+.fclp .season-action p b{display:inline-block}
+/* Fit all three columns; the totals carry the strongest emphasis. */
+.sp-cost-comparison{overflow:visible;border:0;background:transparent;border-radius:0;margin-top:0}
+.cost-scroll-heading{padding:0 0 20px}
+.fclp .cost-scroll-heading h3{font-size:24px;line-height:1.5;color:var(--c-blue-navy);margin:0;font-weight:700}
+.cost-table-frame{width:100%;border:1px solid var(--c-g200);border-radius:12px;background:#fff;overflow:hidden}
+.sp-cost-comparison table{min-width:0;width:100%;table-layout:fixed;font-size:13px}
+.sp-cost-comparison .item-col{width:26%}
+.sp-cost-comparison th,.sp-cost-comparison td{padding:16px 8px;vertical-align:middle}
+.sp-cost-comparison th:first-child{position:static;padding-inline:8px;letter-spacing:0;background:#fff;text-align:left;box-shadow:none}
+.sp-cost-comparison thead th{height:96px;font-size:13px;line-height:1.65}
+.sp-cost-comparison thead th:first-child{font-size:11px;font-weight:400;background:var(--c-g50)}
+.sp-cost-comparison thead th:last-child{font-size:19px}
+.sp-cost-comparison thead small{font-size:10px;line-height:1.7}
+.sp-cost-comparison tbody th{font-size:12px;line-height:1.75;font-weight:500}
+.sp-cost-comparison td{white-space:nowrap}
+.sp-cost-comparison b{font:600 24px/1.4 var(--f-en);letter-spacing:-.02em}
+.sp-cost-comparison small{font-size:11px;font-weight:400;letter-spacing:0}
+.sp-cost-comparison td>small:first-child{margin-bottom:4px}
+.sp-cost-comparison .variable span{font-size:12px;font-weight:500;line-height:1.7}
+.sp-cost-comparison tfoot th:first-child{font-size:12px;line-height:1.7;background:var(--c-g100)}
+.sp-cost-comparison tfoot th:first-child small{font-size:11px}
+.sp-cost-comparison tfoot td,.sp-cost-comparison tfoot th{padding:24px 8px}
+.sp-cost-comparison tfoot b{display:inline-block;font-size:34px;line-height:1.3;margin-right:2px}
+
+}
+@media(max-width:360px){
+.sp-cost-comparison th,.sp-cost-comparison td{padding-inline:6px}
+.sp-cost-comparison th:first-child{padding-inline:6px}
+.sp-cost-comparison tbody th,.sp-cost-comparison tfoot th:first-child{font-size:11px}
+.sp-cost-comparison b{font-size:22px}
+.sp-cost-comparison tfoot b{font-size:30px}
+.sp-cost-comparison thead th{font-size:12px}
+.sp-cost-comparison thead th:last-child{font-size:18px}
+.fclp .fclp-h2,.fclp .fclp-h2 .heading-main{font-size:28px}
+.fclp .fclp-h2 .heading-context{font-size:22px}
+.fclp #model .heading-main{font-size:26px}
+.fclp .give .txt>b{font-size:22px}
+.fclp .repb h3{font-size:20px}
+.fclp .h3{font-size:25px}
+.fclp .so1 mark{font-size:24px}
+.fclp .csh3{font-size:23px}
+.fclp .bridge{font-size:22px}
+.fclp .none .solution-title{font-size:17px}
+.fclp .season-title{font-size:40px}
+.fclp .costlead .hd{font-size:32px}
+.fclp .emp .es{font-size:20px}
+}

@@ -1,0 +1,29 @@
+/* v26：文節で改行する（本文に BudouX で <wbr> を入れてある）。Safari ではみ出す問題もここで直す */
+body,.fclp,.fclp *{word-break:keep-all!important;line-break:strict}
+.fclp .contact-grid>*{min-width:0}
+/* 手作業の改行禁止（jp-unit / jp-word）は文節改行に置き換えたので解除する */
+.fclp span.jp-unit.jp-unit,.fclp span.jp-word.jp-word,.fclp .model-cards-v10 p.card-closing span.jp-unit.jp-unit{white-space:normal!important;display:inline!important}
+/* 見出しは行の長さを揃える（本文への text-wrap:pretty は keep-all と組み合わせると WebKit が落ちるので広げない） */
+.fclp :is(h2,h3,h4,summary,dt,.solution-title,.give .txt>b){text-wrap:balance}
+
+/* スマホ：文章と見出しは中央揃え。リスト・表・フォーム・FAQ・注記は左揃えのまま */
+@media(max-width:600px){
+ .fclp :is(h2,h3,h4,p){text-align:center}
+ .fclp :is(li,td,th,form,details,dl,label) :is(h3,h4,p),.fclp :is(li,td,th,form,details,dl,label):is(h3,h4,p){text-align:left}
+ .fclp :is(.tx,.card-closing,.staff .ld,.give .txt>span,.repb>p,.honest){text-align:center!important}
+ /* 大きな数字が横に並ぶ部品は左揃えのまま */
+ .fclp :is(.csfee,.proof .pf,.loan-support) p{text-align:left!important}
+ .fclp .solution-title{text-align:center}
+ /* FVは左揃えのデザインなので対象外 */
+ .fclp .hero p{text-align:left}
+ .fclp .none .row.b .lb{justify-content:center}
+ .fclp .none .row.a .tx{text-align:left!important}
+ /* 番号＋見出しのカードは、番号を上に置いて縦に並べる */
+ .fclp .give,.fclp .give:first-child{grid-template-columns:minmax(0,1fr)!important;text-align:center}
+ .fclp .give .no{grid-column:1!important;grid-row:1!important;text-align:center}
+ .fclp .give .txt>b{grid-column:1!important;grid-row:2!important;text-align:center}
+ .fclp .give .txt>span{grid-row:3!important}
+ .fclp .give .fig{grid-row:4!important;text-align:left}
+ .fclp .repb .kk{flex-direction:column;align-items:center!important;gap:10px}
+ .fclp .repb h3{text-align:center}
+}

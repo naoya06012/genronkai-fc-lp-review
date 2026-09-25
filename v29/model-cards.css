@@ -1,0 +1,43 @@
+/* v10: content update scoped to the four model cards and their lead. */
+.fclp .model-lead .copy-unit{display:inline-block}
+.fclp .model-cards-v10 .none-h{display:block;padding:24px 28px 20px}
+.fclp .model-cards-v10 .card-symbol{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;color:var(--c-blue-700)}
+.fclp .model-cards-v10 .card-symbol>span{font:500 12px/1 var(--f-en);letter-spacing:.12em}
+.fclp .model-cards-v10 .none-h .t{margin:0;font-size:25px;line-height:1.55;letter-spacing:0;font-weight:700;color:var(--c-blue-navy)}
+.fclp .model-cards-v10 .none-h .t>span{display:block}
+.fclp .model-cards-v10 .none-b{padding:0 28px 28px}
+.fclp .model-cards-v10 .row.a{align-items:center;grid-template-columns:32px minmax(0,1fr);gap:14px}
+.fclp .model-cards-v10 .worry-person{display:block;width:100%;height:auto}
+.fclp .model-cards-v10 .row.a .tx{font-size:14px;line-height:1.85}
+.fclp .model-cards-v10 .row.b .tx{font-size:15px;line-height:1.9}
+.fclp .model-cards-v10 .solution-title{font-size:18px;line-height:1.65}
+.fclp .model-cards-v10 .card-closing{margin:16px 0 0;padding-top:16px;border-top:1px solid var(--c-blue-200);font-size:15px;line-height:1.9;font-weight:700;color:var(--c-blue-navy)}
+.fclp .model-cards-v10 .card-pending{margin-top:16px}
+@media(min-width:761px){
+  .fclp .model-cards-v10 .none-h .t{min-height:3.1em}
+  .fclp .model-cards-v10 .none{display:flex;flex-direction:column}
+  .fclp .model-cards-v10 .none-b{flex:1;display:flex;flex-direction:column}
+  .fclp .model-cards-v10 .row.b{flex:1}
+}
+@media(max-width:1000px) and (min-width:761px){
+  .fclp .model-cards-v10 .none-h{padding-inline:20px}
+  .fclp .model-cards-v10 .none-b{padding-inline:20px}
+  .fclp .model-cards-v10 .none-h .t{font-size:21px}
+}
+@media(max-width:760px){
+  .fclp .model-cards-v10 .none-h{padding:24px 20px 20px}
+  .fclp .model-cards-v10 .none-b{padding:0 20px 24px}
+  .fclp .model-cards-v10 .none-h .t{font-size:23px;line-height:1.55}
+  .fclp .model-cards-v10 .row.a{grid-template-columns:26px minmax(0,1fr);gap:12px}
+  .fclp .model-cards-v10 .row.b{padding:16px;margin-top:20px}
+  .fclp .model-cards-v10 .solution-title{font-size:18px}
+}
+@media(max-width:360px){
+  .fclp .model-cards-v10 .none-h{padding-inline:16px}
+  .fclp .model-cards-v10 .none-b{padding-inline:16px}
+  .fclp .model-cards-v10 .none-h .t{font-size:20px}
+  .fclp .model-cards-v10 .row.a{grid-template-columns:22px minmax(0,1fr);gap:10px}
+  .fclp .model-cards-v10 .problem-voice{padding:12px 10px}
+  .fclp .model-cards-v10 .row.b{padding:16px 12px}
+  .fclp .model-cards-v10 .solution-title{font-size:17px}
+}
