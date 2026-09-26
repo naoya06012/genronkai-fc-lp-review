@@ -1,29 +1,78 @@
-/* v30：フォームを Contact Form 7 に置き換え。CF7 が出力するフォームを LP のデザインに合わせる */
-.fclp .fm-cf7 .wpcf7-form p{margin:0 0 22px;font-size:14px;font-weight:700;line-height:1.8;color:var(--c-g700);text-align:left!important}
-.fclp .fm-cf7 label{display:block;font-size:14px;font-weight:700;line-height:1.8;color:var(--c-g700)}
-.fclp .fm-cf7 .wpcf7-form-control-wrap{display:block;margin-top:8px}
-.fclp .fm-cf7 :is(input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],input[type=date],select,textarea){box-sizing:border-box;width:100%;max-width:100%;padding:14px 16px;border:1px solid var(--c-g300);border-radius:6px;background:#fff;font:400 16px/1.6 var(--f-jp);color:var(--c-g900);-webkit-appearance:none;appearance:none}
-.fclp .fm-cf7 textarea{min-height:140px;resize:vertical}
-.fclp .fm-cf7 :is(input,select,textarea):focus{outline:2px solid var(--c-blue);outline-offset:1px;border-color:var(--c-blue)}
-.fclp .fm-cf7 .wpcf7-checkbox,.fclp .fm-cf7 .wpcf7-radio{display:grid;gap:8px;margin-top:8px}
-.fclp .fm-cf7 .wpcf7-list-item{display:block;margin:0}
-.fclp .fm-cf7 .wpcf7-list-item label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--c-g300);border-radius:6px;font-weight:400;cursor:pointer}
-.fclp .fm-cf7 .wpcf7-acceptance .wpcf7-list-item label{border:0;padding:0}
-.fclp .fm-cf7 input[type=checkbox],.fclp .fm-cf7 input[type=radio]{width:18px;height:18px;margin:0;flex:none;accent-color:var(--c-blue)}
-.fclp .fm-cf7 input[type=submit],.fclp .fm-cf7 button[type=submit]{display:block;width:100%;margin-top:8px;padding:18px 24px;border:0;border-radius:6px;background:var(--c-cta);color:var(--c-g900);font:700 17px/1.4 var(--f-jp);cursor:pointer;-webkit-appearance:none;appearance:none}
-.fclp .fm-cf7 input[type=submit]:hover{filter:brightness(1.05)}
-.fclp .fm-cf7 input[type=submit]:disabled{opacity:.5;cursor:not-allowed}
-.fclp .fm-cf7 .wpcf7-spinner{display:block;margin:12px auto 0}
-.fclp .fm-cf7 .wpcf7-not-valid-tip{margin-top:6px;font-size:12px;font-weight:400;color:#C63C32}
-.fclp .fm-cf7 .wpcf7-response-output{margin:16px 0 0!important;padding:12px 14px!important;border-radius:6px;font-size:14px;font-weight:400;line-height:1.7}
-@media(max-width:600px){.fclp .fm-cf7{padding:28px 20px}}
-/* 旧フォーム用の label 余白（.fm label{margin-bottom:24px}）と、CF7 の自動改行 <br> が余白を広げるので打ち消す */
+/* v30：フォームを Contact Form 7（[contact-form-7 id="7ca94c8"]）に置き換え。
+   フォームの見た目は、同じフォームを使っている genronkai.com/lp/fc-lp003/ のページ内CSSから、フォーム部分だけを流用している */
+.fclp{--c-cta-h:#DE8440}
+.fclp .fm.fm-cf7{background:none;padding:0;border:0;box-shadow:none;border-radius:0}
 .fclp .fm-cf7 label{margin-bottom:0}
-.fclp .fm-cf7 .wpcf7-form p br{display:none}
-.fclp .fm-cf7 .wpcf7-list-item-label{font-size:14px;line-height:1.6}
-/* 項目間の余白は label 側で持つ（CF7 のフォーム定義で段落が分かれていても、1段落でも同じ見た目になる） */
-.fclp .fm-cf7 .wpcf7-form p{margin:0}
-.fclp .fm-cf7 label{margin-bottom:22px}
-.fclp .fm-cf7 .wpcf7-list-item label{margin-bottom:0}
-.fclp .fm-cf7 .wpcf7-acceptance{display:block;margin:4px 0 20px}
-.fclp .fm-cf7 textarea{height:160px}
+.fclp .fm-cf7 .wpcf7-form p{text-align:left!important}
+.fclp .fm-cf7 .wpcf7-form br{display:none}
+.fclp .fm-cf7 .wpcf7-response-output{margin:16px 0 0!important;padding:12px 14px!important;border-radius:6px;font-size:14px;line-height:1.7}
+.fclp .fm-cf7 .wpcf7-not-valid-tip{margin-top:6px;font-size:12px;color:#C63C32}
+.fclp .fm-cf7 .wpcf7-spinner{display:block;margin:12px auto 0}
+.fclp .fclp-form-body{background:#fff;border-radius:var(--r-m);padding:26px 20px;box-shadow:var(--sh-s)}
+.fclp .fclp-row{margin:0 0 22px}
+.fclp .fclp-row:last-of-type{margin-bottom:0}
+.fclp .fclp-label{display:block;font-size:14px;font-weight:700;color:var(--c-g800);margin:0 0 8px;line-height:1.6}
+.fclp .fclp-label b{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.04em;vertical-align:2px}
+.fclp .fclp-label b.req{background:#FBECEA;color:#C63C32}
+.fclp .fclp-label b.any{background:var(--c-g100);color:var(--c-g600)}
+.fclp .fclp-field--2col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fclp .fclp-field--stack{display:grid;gap:10px}
+.fclp .fclp-field--stack > .fclp-help{margin-top:0}
+.fclp .fclp-field p{margin:0}
+.fclp .fclp-help{display:block;margin-top:6px;font-size:12px;color:var(--c-g500);line-height:1.6}
+.fclp input.fclp-input, .fclp select.fclp-input, .fclp textarea.fclp-input{
+  display:block;width:100%;max-width:100%;height:52px;margin:0;padding:0 14px;
+  font-family:var(--f-jp);font-size:16px;line-height:1.5;color:var(--c-g900);
+  background:#fff;border:1px solid var(--c-g300);border-radius:var(--r-s);
+  box-shadow:none;letter-spacing:.02em;transition:border-color .18s,box-shadow .18s;
+}
+.fclp textarea.fclp-textarea{height:auto;min-height:140px;padding:12px 14px;line-height:1.8;resize:vertical}
+.fclp select.fclp-select{
+  appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--c-blue-700) 50%),linear-gradient(135deg,var(--c-blue-700) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 23px,calc(100% - 14px) 23px;background-size:6px 6px,6px 6px;background-repeat:no-repeat;
+}
+.fclp .fclp-input::placeholder{color:var(--c-g400)}
+.fclp .fclp-input:focus{border-color:var(--c-blue);box-shadow:0 0 0 3px var(--c-blue-100);outline:none}
+.fclp .fclp-checks .wpcf7-list-item{display:block;margin:0 0 6px}
+.fclp .fclp-checks .wpcf7-list-item label{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--c-g200);border-radius:var(--r-s);cursor:pointer;font-size:14px;line-height:1.5;transition:background .15s,border-color .15s}
+.fclp .fclp-checks .wpcf7-list-item label:hover{background:var(--c-blue-50);border-color:var(--c-blue-200)}
+.fclp .fclp-checks input[type="checkbox"]{width:20px;height:20px;max-width:none;margin:0;flex:none;accent-color:var(--c-blue)}
+.fclp .fclp-checks .wpcf7-free-text{display:block;width:100%;max-width:100%;height:46px;margin:6px 0 0;padding:0 14px;font-size:15px;border:1px solid var(--c-g300);border-radius:var(--r-s);background:#fff}
+.fclp .fclp-consent{margin:24px 0 0;padding:16px;background:var(--c-g50);border-radius:var(--r-s);font-size:14px;line-height:1.7;text-align:center}
+.fclp .fclp-consent .wpcf7-list-item{margin:0}
+.fclp .fclp-consent label{display:inline-flex;align-items:center;gap:8px}
+.fclp .fclp-consent input[type="checkbox"]{width:20px;height:20px;max-width:none;margin:0;accent-color:var(--c-blue)}
+.fclp .fclp-submit{margin-top:24px;text-align:center}
+.fclp input.fclp-submit-btn, .fclp input#formbtn{
+  display:block;width:100%;max-width:420px;min-height:60px;margin:0 auto;padding:14px 24px;
+  font-family:var(--f-jp);font-size:18px;font-weight:700;letter-spacing:.03em;
+  color:var(--c-g900);background:var(--c-cta);border:2px solid transparent;border-radius:var(--r-s);
+  cursor:pointer;transition:background .2s,box-shadow .2s;
+}
+.fclp input.fclp-submit-btn:hover, .fclp input#formbtn:hover{background:var(--c-cta-h);box-shadow:var(--sh-s)}
+.fclp .fclp-submit-note{margin:12px 0 0;font-size:12px;color:var(--c-g600);line-height:1.7}
+.fclp .wpcf7-not-valid-tip{margin-top:6px;font-size:13px;font-weight:700;color:#C63C32}
+.fclp .wpcf7-response-output{margin:20px 0 0!important;padding:14px!important;border-radius:var(--r-s);font-size:14px;line-height:1.7}
+.fclp form.wpcf7-form > p:last-child{margin-top:18px;font-size:11px;color:var(--c-g500);line-height:1.7;text-align:center}
+.fclp .fclp-form .inquiry th .haveto,.fclp .fclp-form .inquiry th .any{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.04em;vertical-align:1px;white-space:nowrap}
+.fclp .fclp-form .inquiry th .any{background:var(--c-g100);color:var(--c-g600)}
+.fclp .fclp-form .inquiry .wpcf7-form-control-wrap{display:block}
+.fclp .fclp-form .inquiry .wpcf7-checkbox{display:block}
+.fclp .fclp-form .inquiry .wpcf7-list-item{display:block;margin:0 0 6px}
+.fclp .fclp-form .inquiry .wpcf7-list-item label{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--c-g200);border-radius:var(--r-s);cursor:pointer;font-size:14px;line-height:1.5;background:#fff}
+.fclp .fclp-form .inquiry .wpcf7-list-item label:hover{background:var(--c-blue-50);border-color:var(--c-blue-200)}
+.fclp .fclp-form .inquiry .wpcf7-free-text{display:block;width:100%;max-width:100%;height:46px;margin:6px 0 0;padding:0 14px;font-size:15px;border:1px solid var(--c-g300);border-radius:var(--r-s);background:#fff}
+.fclp .fclp-form .privacy-check .wpcf7-list-item{display:inline;margin:0}/* フォームの文章は文節情報（<wbr>）を持たないので、LP全体の keep-all を解除して普通に折り返す */
+.fclp .fm-cf7,.fclp .fm-cf7 *{word-break:normal!important;overflow-wrap:anywhere}
+/* CF7 が姓・名を1つの <p> で包むため、2列・縦積みのグリッドは <p> 側にかける */
+.fclp .fclp-field--2col,.fclp .fclp-field--stack{display:block}
+.fclp .fclp-field--2col>p{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fclp .fclp-field--stack>p{display:grid;gap:10px}
+.fclp .fclp-field--stack>p>.fclp-help{margin-top:0}
+.fclp .fm-cf7 .wpcf7-form-control-wrap{display:block}
+@media(max-width:600px){
+ /* 元のボタン指定は #formbtn（ID）付きで強いので、同じく ID で上書きする */
+ #genronkai-fc-lp .fm-cf7 input.fclp-submit-btn,#genronkai-fc-lp .fm-cf7 input#formbtn{font-size:15px!important;padding-left:10px!important;padding-right:10px!important;letter-spacing:0!important}
+}
+@media(max-width:360px){#genronkai-fc-lp .fm-cf7 input.fclp-submit-btn,#genronkai-fc-lp .fm-cf7 input#formbtn{font-size:13px!important}}
