@@ -1,0 +1,122 @@
+
+/* v4 — stronger hierarchy, conversational comparisons, alternate role artwork. */
+.fclp .hero-copy{max-width:590px}
+.fclp .hero-title{font-size:72px;line-height:1.4;margin-bottom:24px}
+.fclp .hero-title>span{font-size:.76em}
+.fclp .hero-title b{color:var(--c-blue-l)}
+.fclp .hero-deck strong{border:0;padding:0}
+.hero-action{padding:0;background:none;border-radius:6px}
+.fclp .hero .btn{box-shadow:0 8px 24px rgba(0,48,73,.25);min-width:368px}
+.fclp .hero .btn:hover{box-shadow:0 8px 24px rgba(0,48,73,.32)}
+/* Grey problem bubble -> blue solution, preserving the original explanation. */
+.fclp .nones{max-width:1072px;padding:24px;background:var(--c-g50);border-radius:12px;gap:24px}
+.fclp .none{background:#fff;border:1px solid var(--c-g200);box-shadow:0 2px 8px rgba(0,72,107,.08);position:relative}
+.fclp .none::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--c-blue) 82%,var(--c-blue-l) 82%)}
+.fclp .none-h{padding:20px 24px 16px;background:#fff;gap:16px}
+.fclp .none-h .t{font-size:24px}
+.fclp .none-h .model-icon{width:40px;height:40px}
+.fclp .none-b{padding:0 24px 24px}
+.fclp .none .row.a{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:center;padding:0;background:transparent}
+.problem-person{color:var(--c-g500);display:block}
+.worry-person{display:block;width:44px;height:68px}
+.problem-voice{padding:12px 16px;background:var(--c-g50);border-radius:6px;position:relative}
+.problem-voice::before{content:"";position:absolute;left:-7px;top:calc(50% - 7px);width:14px;height:14px;transform:rotate(45deg);background:var(--c-g50)}
+.fclp .none .row.a .lb{position:relative;display:block;margin:0 0 4px;font-size:11px;font-weight:500;color:var(--c-g600)}
+.fclp .none .row.a .tx{font-size:13px;line-height:1.85;color:var(--c-g700)}
+.fclp .none .row.b{margin:20px 0 0;padding:16px 20px 20px;border:0;border-radius:6px;background:var(--c-blue-50)}
+.fclp .none .row.b .lb{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--c-blue-700);margin:0 0 8px}
+.fclp .none .row.b .lb svg{width:22px;height:22px;flex:none}
+.fclp .none .solution-title{display:block;font-size:18px;line-height:1.6;margin:0 0 8px;color:var(--c-blue-navy);font-weight:700}
+.fclp .none .row.b .tx{font-size:14px;line-height:1.85;color:var(--c-g900);font-weight:400}
+/* Alternate illustrations are code-native, faceless pictograms. */
+.role-image{display:block;width:160px;flex:none}
+.role-picto{display:block;width:100%;height:auto}
+.role-image>.scene{display:none!important}
+.use-original-roles .role-image>.scene{display:block!important}
+.use-original-roles .role-image>.role-picto{display:none}
+.fclp .owner-node .role-image{width:160px}
+.fclp .owner-node .role-image .scene{width:100%}
+.fclp .st .role-image{width:176px;margin:0 auto 16px}
+.fclp .st .role-image .scene{width:100%;margin:0}
+.fclp .cn .role-image{width:144px;margin:auto}
+.fclp .cn .role-image .scene{width:100%;margin:0}
+.role-version-control{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin:0 auto 24px;color:var(--c-g600);font-size:11px}
+.role-version-control>div{display:flex;gap:4px;background:var(--c-g50);border:1px solid var(--c-g200);padding:4px;border-radius:6px}
+.role-version-control button{font-family:inherit;font-size:11px;line-height:1.5;min-height:40px;cursor:pointer;border:0;background:none;color:var(--c-g600);padding:8px 16px;border-radius:4px}
+.role-version-control button[aria-pressed="true"]{color:var(--c-blue-navy);background:#fff;box-shadow:0 2px 8px rgba(0,72,107,.08);font-weight:700}
+/* Warm background is the guide's orange-100; saturated orange remains CTA-only. */
+.fclp .card-now{border:1px solid var(--c-g200);box-shadow:0 8px 24px rgba(0,72,107,.12)}
+.season-head{background:#FCE8D8;color:var(--c-blue-navy);position:relative;padding-top:48px}
+.fclp .card-now .cn-top{color:var(--c-blue-navy);background:#fff;border:0;border-radius:4px;padding:8px 20px;font-size:12px;box-shadow:0 2px 8px rgba(0,72,107,.08)}
+.fclp .season-pre{color:var(--c-blue-navy);font-size:22px}
+.fclp .season-title{color:var(--c-blue-navy);font-size:64px}
+.season-title span{color:var(--c-blue-navy)}
+.fclp .season-sub{color:var(--c-g700)}
+.season-dates{border-color:rgba(0,72,107,.18);color:var(--c-blue-navy)}
+.season-dates span{color:var(--c-g700)}
+.season-dates>i{color:var(--c-blue-700)}
+.season-action{background:#FCE8D8;border-color:var(--c-g200)}
+.fclp .season-action .btn{box-shadow:0 8px 24px rgba(0,72,107,.12)}
+@media(max-width:1100px){
+.fclp .hero-title{font-size:64px}.fclp .hero-copy{max-width:530px}
+.fclp .nones{padding:20px;gap:20px}
+.fclp .none-h{padding:20px 20px 16px}
+.fclp .none-b{padding:0 20px 20px}
+.fclp .none .solution-title{font-size:17px}
+}
+@media(max-width:860px){
+.fclp .hero-title{font-size:56px}.fclp .hero-copy{max-width:480px}
+.fclp .hero .btn{min-width:344px}
+.fclp .nones{padding:16px;gap:16px}
+.fclp .none-h{padding:20px 16px 16px;gap:12px}
+.fclp .none-h .t{font-size:22px}
+.fclp .none-b{padding:0 16px 16px}
+.fclp .none .row.a{grid-template-columns:32px minmax(0,1fr);gap:12px}
+.worry-person{width:32px;height:52px}
+.problem-voice{padding:12px}
+.fclp .none .row.a .tx{font-size:12px}
+.fclp .none .row.b{padding:12px 16px 16px}
+.fclp .none .row.b .tx{font-size:13px}
+.fclp .none .solution-title{font-size:16px}
+.fclp .season-title{font-size:52px}
+}
+@media(max-width:600px){
+.fclp .hero-title{font-size:clamp(36px,11.4vw,54px);margin-bottom:20px;line-height:1.4}
+.fclp .hero-title>span{font-size:.8em}
+.hero-action{padding:0}
+.fclp .hero .btn{min-width:0;width:100%}
+.fclp .nones{padding:16px 12px;margin-inline:-8px;gap:20px}
+.fclp .none-h{padding:20px 20px 16px;gap:16px}
+.fclp .none-h .t{font-size:23px}
+.fclp .none-b{padding:0 16px 20px}
+.fclp .none .row.a{grid-template-columns:32px minmax(0,1fr);gap:12px}
+.fclp .none .row.a .tx{font-size:13px}
+.fclp .none .row.b{padding:16px;margin-top:16px}
+.fclp .none .solution-title{font-size:17px}
+.fclp .none .row.b .tx{font-size:14px}
+.role-version-control{display:block;text-align:center;margin-bottom:24px}
+.role-version-control>span{display:block;margin-bottom:8px}
+.role-version-control>div{display:inline-flex}
+.role-version-control button{padding:8px 12px}
+.fclp .owner-node .role-image{width:112px}
+.fclp .st .role-image{width:144px;margin:0 auto 16px}
+.fclp .cn .role-image{width:104px;margin:0}
+.fclp .season-title{font-size:44px}
+.fclp .season-pre{font-size:17px}
+.fclp .card-now .cn-top{font-size:10px;padding:8px 12px}
+.season-head{padding-top:32px}
+}
+@media(max-width:360px){
+.fclp .none-h{padding-inline:16px}
+.fclp .none .solution-title{font-size:15px}
+.fclp .none .row.b .tx{font-size:13px}
+.fclp .none .row.a .tx{font-size:12px}
+.fclp .season-title{font-size:40px}
+}
+@media print{.role-version-control{display:none}}
+@media(max-width:600px){
+.fclp .chain{grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr) 12px minmax(0,1fr)}
+.fclp .cn{min-width:0}
+.fclp .cn .role-image{width:100%;max-width:104px;margin:0 auto}
+.fclp .cn .role-image .scene{width:100%;max-width:100%}
+}

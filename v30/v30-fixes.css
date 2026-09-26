@@ -1,0 +1,29 @@
+/* v30：フォームを Contact Form 7 に置き換え。CF7 が出力するフォームを LP のデザインに合わせる */
+.fclp .fm-cf7 .wpcf7-form p{margin:0 0 22px;font-size:14px;font-weight:700;line-height:1.8;color:var(--c-g700);text-align:left!important}
+.fclp .fm-cf7 label{display:block;font-size:14px;font-weight:700;line-height:1.8;color:var(--c-g700)}
+.fclp .fm-cf7 .wpcf7-form-control-wrap{display:block;margin-top:8px}
+.fclp .fm-cf7 :is(input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],input[type=date],select,textarea){box-sizing:border-box;width:100%;max-width:100%;padding:14px 16px;border:1px solid var(--c-g300);border-radius:6px;background:#fff;font:400 16px/1.6 var(--f-jp);color:var(--c-g900);-webkit-appearance:none;appearance:none}
+.fclp .fm-cf7 textarea{min-height:140px;resize:vertical}
+.fclp .fm-cf7 :is(input,select,textarea):focus{outline:2px solid var(--c-blue);outline-offset:1px;border-color:var(--c-blue)}
+.fclp .fm-cf7 .wpcf7-checkbox,.fclp .fm-cf7 .wpcf7-radio{display:grid;gap:8px;margin-top:8px}
+.fclp .fm-cf7 .wpcf7-list-item{display:block;margin:0}
+.fclp .fm-cf7 .wpcf7-list-item label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--c-g300);border-radius:6px;font-weight:400;cursor:pointer}
+.fclp .fm-cf7 .wpcf7-acceptance .wpcf7-list-item label{border:0;padding:0}
+.fclp .fm-cf7 input[type=checkbox],.fclp .fm-cf7 input[type=radio]{width:18px;height:18px;margin:0;flex:none;accent-color:var(--c-blue)}
+.fclp .fm-cf7 input[type=submit],.fclp .fm-cf7 button[type=submit]{display:block;width:100%;margin-top:8px;padding:18px 24px;border:0;border-radius:6px;background:var(--c-cta);color:var(--c-g900);font:700 17px/1.4 var(--f-jp);cursor:pointer;-webkit-appearance:none;appearance:none}
+.fclp .fm-cf7 input[type=submit]:hover{filter:brightness(1.05)}
+.fclp .fm-cf7 input[type=submit]:disabled{opacity:.5;cursor:not-allowed}
+.fclp .fm-cf7 .wpcf7-spinner{display:block;margin:12px auto 0}
+.fclp .fm-cf7 .wpcf7-not-valid-tip{margin-top:6px;font-size:12px;font-weight:400;color:#C63C32}
+.fclp .fm-cf7 .wpcf7-response-output{margin:16px 0 0!important;padding:12px 14px!important;border-radius:6px;font-size:14px;font-weight:400;line-height:1.7}
+@media(max-width:600px){.fclp .fm-cf7{padding:28px 20px}}
+/* 旧フォーム用の label 余白（.fm label{margin-bottom:24px}）と、CF7 の自動改行 <br> が余白を広げるので打ち消す */
+.fclp .fm-cf7 label{margin-bottom:0}
+.fclp .fm-cf7 .wpcf7-form p br{display:none}
+.fclp .fm-cf7 .wpcf7-list-item-label{font-size:14px;line-height:1.6}
+/* 項目間の余白は label 側で持つ（CF7 のフォーム定義で段落が分かれていても、1段落でも同じ見た目になる） */
+.fclp .fm-cf7 .wpcf7-form p{margin:0}
+.fclp .fm-cf7 label{margin-bottom:22px}
+.fclp .fm-cf7 .wpcf7-list-item label{margin-bottom:0}
+.fclp .fm-cf7 .wpcf7-acceptance{display:block;margin:4px 0 20px}
+.fclp .fm-cf7 textarea{height:160px}

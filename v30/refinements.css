@@ -1,0 +1,38 @@
+/* v5: restrained, reversible editorial and usability refinements. */
+.fclp .hero-deck{line-height:1.95;font-size:16px}
+.fclp .hero-deck strong{display:block;font-size:20px;line-height:1.7;margin-top:4px}
+.hero-deck-detail{display:block}
+.fclp .give,.fclp .give:first-child{align-items:start}
+.fclp .give .no{font-size:24px;line-height:1.6;align-self:start;padding-top:0}
+.fclp .give .txt{align-self:start}
+.fclp .give .txt>b{margin-top:0}
+.fclp .none .row.a .tx{font-size:14px}
+.fclp .offer{background:#fff;border:1px solid var(--c-blue-100);border-radius:12px;padding:32px;box-shadow:var(--sh-s)}
+.fclp .offer .oh{text-align:left;font-size:12px}
+.fclp .offer .ot{text-align:left;font-size:24px;line-height:1.6;margin-bottom:24px}
+.fclp .offer .ol li{border-color:var(--c-blue-200)}
+.fclp .offer .ol li:last-child{border-bottom:0;padding-bottom:0}
+.fclp .fm{border-color:var(--c-g200)}
+.mobile-action[hidden]{display:none!important}
+.mobile-action{display:none}
+@media(min-width:861px){.fclp .give .txt{padding-top:0}.fclp .offer{position:sticky;top:32px}}
+@media(max-width:860px){.fclp .offer{padding:24px}.fclp .offer .ot{font-size:22px}}
+@media(max-width:600px){
+.fclp .hero-deck{font-size:14px;line-height:1.9;margin-bottom:24px}
+.fclp .hero-deck strong{font-size:18px;margin-top:4px;line-height:1.8}
+.fclp .none .row.a .tx{font-size:14px;line-height:1.85}
+.fclp .none .row.b .tx{font-size:15px;line-height:1.9}
+.fclp .give .no{font-size:22px;line-height:1.6}
+.fclp .give .txt>b{font-size:22px;line-height:1.6}
+.fclp .give .txt>span{font-size:16px;line-height:1.9}
+.fclp .give .fig{margin-top:24px}
+.fclp .offer{padding:24px}
+.fclp .offer .ol li{font-size:15px;line-height:1.9}
+.mobile-action{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--c-g200);padding:10px 20px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -2px 8px rgba(0,72,107,.08)}
+.mobile-action .btn{display:flex;align-items:center;justify-content:center;gap:24px;min-height:48px;background:var(--c-cta);color:var(--c-g900);border-radius:6px;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none}
+.mobile-action .btn:hover{background:#DE8440}
+.mobile-action .btn span{font-size:22px;font-weight:400}
+html{scroll-padding-bottom:88px}
+}
+@media(max-width:360px){.fclp .hero-deck{font-size:13px}.fclp .hero-deck strong{font-size:17px}.fclp .none .row.a .tx{font-size:13px}.fclp .none .row.b .tx{font-size:14px}}
+@media print{.mobile-action{display:none!important}}

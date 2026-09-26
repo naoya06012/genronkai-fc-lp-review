@@ -1,0 +1,74 @@
+/* v20: Editorial Japanese line breaks. Semantic units are static HTML,
+   work without JavaScript, and retain the existing text hierarchy. */
+.fclp span.jp-unit.jp-unit {
+  display: inline-block;
+  white-space: nowrap;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+.fclp .copy-sentence { display: block; text-wrap: balance; }
+.fclp .fclp-lead { text-align: center; }
+.fclp .fclp-lead strong.copy-sentence { display: block; margin-top: 0; }
+.fclp #economics .costsub { text-align: center; margin-left: auto; margin-right: auto; }
+.fclp #economics .gross-explanation { text-align: center; line-height: 1.95; }
+.fclp #economics .gross-explanation .copy-sentence { display: inline; }
+.fclp #quality .srcline { text-align: center; }
+.fclp .quality-lead strong { margin-top: 0; }
+.fclp .quality-lead .copy-sentence + .copy-sentence { margin-top: 10px; }
+.fclp :is(.tx,.card-closing,.jobs li,.ld,.give .txt>span,.a2,.sup li>span,.offer li,.csr .nm>span) { text-wrap: pretty; }
+@media (min-width: 601px) {
+  .fclp span.sp-line.sp-line { display: inline-block; white-space: nowrap; }
+}
+@media (max-width: 600px) {
+  .fclp .mobile-copy-line { display: block; }
+  .fclp #economics .gross-explanation .copy-sentence { display: block; }
+  .fclp #economics .gross-explanation b { display: block; max-width: 300px; margin: 0 auto; text-wrap: balance; }
+  .fclp #quality .quality-lead { letter-spacing: 0; }
+  .fclp #quality .quality-lead .copy-sentence:last-child strong { display: block; }
+}
+
+/* v21: Body copy fills its available width naturally. Editorial phrase
+   grouping remains reserved for headings, leads, labels and notes. */
+.fclp :is(
+  .tx, .card-closing, .staff .ld, .jobs li,
+  .give .txt > span, .repb > p, .sup li > span,
+  .why li div > span, .faq .a2, .opening-flow p,
+  .tl .bd > span, .offer .ol li,
+  .loan-support p:not(.loan-support-title)
+) {
+  text-align: left;
+  text-wrap: pretty;
+  word-break: normal;
+  line-break: strict;
+}
+.fclp :is(
+  .tx, .card-closing, .staff .ld, .jobs li,
+  .give .txt > span, .repb > p, .sup li > span,
+  .why li div > span, .faq .a2, .opening-flow p,
+  .tl .bd > span, .offer .ol li,
+  .loan-support p:not(.loan-support-title)
+) span.jp-unit.jp-unit,
+.fclp .staff .ld .econ-unit {
+  display: inline;
+  white-space: normal;
+}
+.fclp span.jp-word.jp-word {
+  display: inline;
+  white-space: nowrap;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* v23: The card closing is a one-sentence conclusion, so it keeps phrase
+   grouping. The offer list grew to seven items. */
+.fclp .model-cards-v10 p.card-closing span.jp-unit.jp-unit { display: inline-block; white-space: nowrap; }
+.fclp .offer .ol li { padding-top: 16px; padding-bottom: 16px; }
+.fclp .offer .ol li::before { top: 19px; }
+.fclp .offer .offer-note { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--c-blue-200); font-size: 12px; line-height: 1.8; color: var(--c-g600); }
