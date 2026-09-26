@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FC募集LP 貼り付け手順</title>
+<style>
+:root{--ink:#1b2a36;--sub:#5b6b78;--line:#dde4ea;--bg:#f5f8fa;--accent:#0a6fb3;--warn:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 "Hiragino Sans","Noto Sans JP",sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:24px;margin:0 0 4px}
+.lead{color:var(--sub);margin:0 0 28px;font-size:14px}
+section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:18px}
+h2{font-size:18px;margin:0 0 12px}
+ol,ul{margin:0;padding-left:1.4em}
+li{margin:6px 0}
+.copybox{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:4px 0 12px}
+button{font:inherit;font-weight:700;font-size:17px;padding:14px 28px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+button:active{transform:translateY(1px)}
+#status{font-weight:700;color:var(--accent)}
+textarea{width:100%;height:120px;font:12px/1.5 ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:6px;padding:8px;color:var(--sub)}
+.note{font-size:14px;color:var(--sub)}
+.warn h2{color:var(--warn)}
+code{background:var(--bg);padding:1px 6px;border-radius:4px;font-size:14px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<h1>FC募集LP　WordPressへの貼り付け手順</h1>
+<p class="lead">v31（2026-09-26）。このページのボタンでコードをコピーし、カスタムHTMLブロックに貼るだけで本番に出せます（画像・フォーム込み）。</p>
+
+<section>
+<h2>1. コードをコピーする</h2>
+<div class="copybox"><button id="copy" type="button">貼り付け用コードをコピー</button><span id="status"></span></div>
+<p class="note">ボタンが効かない場合は、下の枠をクリック → 全選択（Mac：⌘A／Windows：Ctrl+A）→ コピーしてください。</p>
+<textarea id="code" readonly>読み込み中…</textarea>
+<p class="note">完成イメージ：<a href="wordpress.html" target="_blank" rel="noopener">貼り付け後の表示プレビュー</a></p>
+</section>
+
+<section>
+<h2>2. WordPressに貼る</h2>
+<ol>
+<li><b>管理者アカウント</b>でWordPressにログイン</li>
+<li>「固定ページ」→「新規追加」</li>
+<li>本文の「＋」→「カスタムHTML」を検索して追加</li>
+<li>ブロックの入力欄に貼り付け（WordPressのバージョンによっては、先に「HTMLを編集（Edit HTML）」を押してから貼り、「更新」を押す）</li>
+<li>フッターはサイトのテンプレートのものが表示されます（LP側のフッターは削除済み）。本文幅の設定は変えなくて大丈夫です</li>
+<li>「下書き保存」→「プレビュー」で表示を確認</li>
+</ol>
+</section>
+
+<section class="warn">
+<h2>うまくいかないとき</h2>
+<ul>
+<li><b>保存時に「403」などのエラーが出る</b> → サーバーのWAF（エックスサーバーなら「WAF設定」）やセキュリティ系プラグインが原因です。一時的にオフにして保存し、保存後に戻してください</li>
+<li><b>保存後にデザインが崩れる・中身が消える</b> → 管理者以外のアカウントだとコードが削除されることがあります。管理者で貼り直してください</li>
+<li><b>文字だけが貼られてデザインがない</b> → コードではなく画面の文字をコピーしています。上のボタンでコピーし直してください</li>
+</ul>
+</section>
+
+<section>
+<h2>公開前の確認</h2>
+<ul>
+<li><b>フォーム</b>：Contact Form 7のショートコード <code>[contact-form-7 id="7ca94c8" title="FCオーナー募集_LP用"]</code> を組み込み済み。フォームの見た目は fc-lp003 と同じ項目構成で確認済み。公開前にテスト送信で、通知メールが届くか確認してください</li>
+<li><b>画像</b>：コードの中に埋め込み済みです。アップロードや差し替えは不要です</li>
+<li><b>検索除け</b>：必要ならページにnoindexを設定してください</li>
+</ul>
+<p class="note">確認済み：WordPress 6.6／6.8／7.1、管理者・編集者の両方で、貼り付け→保存→表示まで動作。本文の幅が640pxなどに制限されたテーマでも、LPは自動で画面幅いっぱいに広がります（広げられないテーマでは、その幅に合わせたレイアウトで表示）。</p>
+</section>
+</main>
+<script>
+const ta=document.getElementById('code'),st=document.getElementById('status');
+let code='';
+fetch('wordpress-paste.txt',{cache:'no-store'}).then(r=>r.text()).then(t=>{code=t;ta.value=t;}).catch(()=>{ta.value='読み込みに失敗しました。ページを再読み込みしてください。';});
+document.getElementById('copy').addEventListener('click',async()=>{
+  if(!code){st.textContent='読み込み中です。少し待ってから押してください';return;}
+  try{await navigator.clipboard.writeText(code);st.textContent='コピーしました（'+code.length.toLocaleString()+'文字）';}
+  catch(e){ta.focus();ta.select();try{document.execCommand('copy');st.textContent='コピーしました';}catch(_){st.textContent='下の枠から手動でコピーしてください';}}
+});
+ta.addEventListener('focus',()=>ta.select());
+</script>
+</body>
+</html>
